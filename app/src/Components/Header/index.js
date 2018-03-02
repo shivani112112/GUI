@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import Api from '../Api';
 
 class Header extends Component {
   render() {
-//https://d30y9cdsu7xlg0.cloudfront.net/png/14173-200.png
     return (
       <div>
       <div className="App-intro">
