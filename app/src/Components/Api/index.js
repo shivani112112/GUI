@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Header from '../Header';
-import Conditions from '../Conditions';
-
 class Api extends Component {
 
   constructor(props) {
