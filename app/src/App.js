@@ -15,6 +15,8 @@ class App extends Component {
     this.state = {
       flag: true,
       location: "",
+      locationLat: ""
+      locationLong: ""
       temperature: "",
       condition:"",
       hi:"",
@@ -73,6 +75,22 @@ class App extends Component {
 
     );
   }
+  
+  hello = () =>{
+    console.log(navigator.geolocation.getCurrentPosition(this.success, this.error));
+  }
+  success = (pos) => {
+  var crd = pos.coords;
+  this.setState({locationLat:crd.latitude, locationLong:crd.longitude})
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+};
+
+error = (err) => {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+};
   parseConditions = (parsed_json) => {
     var theLocation = parsed_json['current_observation']['observation_location']['city'];
     var temp = parsed_json['current_observation']['temp_c'];
