@@ -1,7 +1,7 @@
 .App {
     padding:10px;
     background: linear-gradient(#336699, #993366);
-    height: 100%;
+
     color: aliceblue;
     text-shadow: 1px 1px 6px black;
 }
@@ -100,9 +100,11 @@ table{
     background-color:rgba(0,0,0,0.2);
 }
 
-.footer{
+.footer_take{
     background-color:rgba(0,0,0,0.2);
+    float:left;
 }
+
 td{
     width: 50px;
     text-align: center;
