@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  
 }
 
 .App-logo {
@@ -24,8 +24,15 @@
 .header{
     color: blue;
 }
-.conditions.r{
-    color: red;
+.conditions_l{
+    float:left;
+}
+.conditions_r{
+    float:right;
+}
+.conditions_r_hilo{
+    font-family: "Mukta Mahee";
+    font-size: 22px;
 }
 td{
     width: 50px;
