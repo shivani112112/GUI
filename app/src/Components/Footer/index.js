@@ -27,7 +27,7 @@ class Footer extends Component {
 		  <div className="footer_take"><h3>What to take</h3>{take}</div>
       		<div className="footer_travel"></div>
       </div>
-      
+
     );
   }
 
