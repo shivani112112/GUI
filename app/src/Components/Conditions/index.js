@@ -9,8 +9,12 @@ class Conditions extends Component {
   render() {
     return (
     <div>
-      <div className="right" align="right">
-          <p>High:{this.props.hi}</p>
+    <div className="left" align="left">
+        <p>EMOJI</p>
+        <p>{this.props.condition}</p>
+    </div>
+      <div className="conditions" align="right">
+          <<p>High:{this.props.hi}</p>
           <p>Current Temperature:{this.props.temperature}</p>
           <p>Lo:{this.props.lo}</p>
           <p>Feelslike: {this.props.feelslike}</p>
