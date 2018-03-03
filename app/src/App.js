@@ -29,7 +29,7 @@ class App extends Component {
   }
   getLocation = () =>{
   $.ajax({
-    url: "http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/UK/London.json",
+    url: "http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/autoip.json",
     dataType: "jsonp",
     success : this.parseConditions,
     error : function(req, err){ console.log('API call failed ' + err); }
