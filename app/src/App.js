@@ -30,8 +30,11 @@ class App extends Component {
     };
   }
   getLocation = () =>{
+    //var long = this.state.locationLong;
+    var url="http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/UK/London.json"
+    console.log(url)
   $.ajax({
-    url: "http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/wandstead.json",
+    url: url,
     dataType: "jsonp",
     success : this.parseConditions,
     error : function(req, err){ console.log('API call failed ' + err); }
@@ -58,8 +61,8 @@ class App extends Component {
 }
 
   render() {
+    this.hello()
     if(this.state.flag){
-      this.hello()
       this.getLocation()
       this.state.flag=false
   }
@@ -83,10 +86,6 @@ class App extends Component {
   success = (pos) => {
   var crd = pos.coords;
   this.setState({locationLat:crd.latitude, locationLong:crd.longitude})
-  console.log('Your current position is:');
-  console.log(`Latitude : ${crd.latitude}`);
-  console.log(`Longitude: ${crd.longitude}`);
-  console.log(`More or less ${crd.accuracy} meters.`);
 };
 
 error = (err) => {
