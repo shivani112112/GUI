@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header';
 import Conditions from './Components/Conditions';
@@ -63,7 +64,7 @@ class App extends Component {
     return (
       <div className="App">
         <Api/>
-        <Header example={this.state.location} />
+        <Header location={this.state.location} />
         <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
         <Compare yHi={this.state.yesterdayHi} yLo={this.state.yesterdayLo} high={this.state.hi} low={this.state.lo}/>
         <Rest/>
