@@ -14,7 +14,7 @@ class Conditions extends Component {
         <p>{this.props.condition}</p>
     </div>
       <div className="conditions" align="right">
-          <<p>High:{this.props.hi}</p>
+          <p>High:{this.props.hi}</p>
           <p>Current Temperature:{this.props.temperature}</p>
           <p>Lo:{this.props.lo}</p>
           <p>Feelslike: {this.props.feelslike}</p>
