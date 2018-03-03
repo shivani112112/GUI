@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Header from '../Header';
+import Conditions from '../Conditions';
+
 class Api extends Component {
 
   constructor(props) {
@@ -13,8 +15,7 @@ class Api extends Component {
       condition:"",
       hi:10,
       lo:4,
-      feelslike:11
-
+      feelslike:10
     };
   }
 
