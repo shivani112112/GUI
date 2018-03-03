@@ -70,7 +70,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Api/>
+        
         <Header location={this.state.location} />
         <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
         <Rest/>

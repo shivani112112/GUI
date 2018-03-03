@@ -15,10 +15,10 @@ class Conditions extends Component {
         </div>
 
           <div className="conditions_r">
-              <div className="conditions_r_hilo">High:{this.props.hi}</div>
-              <div className="conditions_r_temp">{this.props.temperature}</div>
-              <div className="conditions_r_hilo">Lo:{this.props.lo}</div>
-              <div className="conditions_r_fl">Feelslike: {this.props.feelslike}</div>
+              <div className="conditions_r_hilo">H:{this.props.hi}&#176;</div>
+              <div className="conditions_r_temp">{this.props.temperature}&#176;</div>
+              <div className="conditions_r_hilo">L:{this.props.lo}&#176;</div>
+              <div className="conditions_r_fl">FEELS LIKE: {this.props.feelslike}&#176;</div>
           </div>
 
     </div>

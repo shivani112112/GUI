@@ -8,7 +8,7 @@ class Header extends Component {
     return (
 
       <div className="header">
-          <div className="header.search"><img src={require('../../Images/search.png')} height="30 px" width="20 px" align="left"/></div>
+          <div className="header.search"><img src={require('../../Images/search.png')} height="20 px" width="20 px" align="left"/></div>
             <div className="header.location"><p align="center">{this.props.location}</p></div>
 
       </div>
