@@ -73,8 +73,8 @@ class App extends Component {
         <Api/>
         <Header location={this.state.location} />
         <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
-        <Compare yHi={this.state.yesterdayHi} yLo={this.state.yesterdayLo} high={this.state.hi} low={this.state.lo}/>
         <Rest/>
+          <Compare yHi={this.state.yesterdayHi} yLo={this.state.yesterdayLo} high={this.state.hi} low={this.state.lo}/>
         <Footer Conditions={this.state.condition} Temperature={this.state.temperature} high={this.state.hi} low={this.state.lo} cofr={this.state.rain}/>
       </div>
 
