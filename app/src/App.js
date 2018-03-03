@@ -41,20 +41,20 @@ class App extends Component {
     error : function(req, err){ console.log('API call failed ' + err); }
   })
   $.ajax({
-    url: "http://api.wunderground.com/api/61fa425d356c6fd4/yesterday/q/UK/London.json",
+    url: "http://api.wunderground.com/api/61fa425d356c6fd4/yesterday/q/"+this.state.locationLat+","+this.state.locationLong+".json",
     dataType: "jsonp",
     success : this.parseYesterday,
     error : function(req, err){ console.log('API call failed ' + err); }
   })
 
   $.ajax({
-    url: "http://api.wunderground.com/api/61fa425d356c6fd4/forecast10day/q/UK/London.json",
+    url: "http://api.wunderground.com/api/61fa425d356c6fd4/forecast10day/q/"+this.state.locationLat+","+this.state.locationLong+".json",
     dataType: "jsonp",
     success : this.parseForecast,
     error : function(req, err){ console.log('API call failed ' + err); }
   })
   $.ajax({
-    url: "http://api.wunderground.com/api/61fa425d356c6fd4/planner_07010731/q/UK/London.json",
+    url: "http://api.wunderground.com/api/61fa425d356c6fd4/planner_07010731/q/"+this.state.locationLat+","+this.state.locationLong+".json",
     dataType: "jsonp",
     success : this.parseRain,
     error : function(req, err){ console.log('API call failed ' + err); }
