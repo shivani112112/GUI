@@ -15,7 +15,7 @@ class Api extends Component {
       condition:"",
       hi:10,
       lo:4,
-      feelslike:10
+      feelslike:12
     };
   }
 
