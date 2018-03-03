@@ -12,14 +12,13 @@
   background-size: 40px 40px;
   background-repeat: no-repeat;
   height: 40px;
-    width:40px;
+
 }
 .chancerain {
   background-image: url("http://icons.wxug.com/i/c/k/chancerain.gif");
   background-size: 40px 40px;
   background-repeat: no-repeat;
   height: 40px;
-    width: 40px;
 }
 
 
@@ -28,7 +27,7 @@
 }
 
 td{
-    
+    width: 50px;
 }
 
 @keyframes App-logo-spin {
