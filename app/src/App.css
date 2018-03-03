@@ -106,12 +106,23 @@ table{
 .footer{
 	width: 100%;
 	display: inline-block;
+	text-align: center;
 	
 }
 
 .footer_take{
+	padding-top: 5px;
+	width: 48%;
     background-color:rgba(0,0,0,0.2);
     float:left;
+}
+
+.footer_travel{
+	padding-top: 5px;
+	height: 50px;
+	width: 48%;
+    background-color:rgba(0,0,0,0.2);
+    float:right;
 }
 
 td{
@@ -119,6 +130,10 @@ td{
     text-align: center;
 }
 
+
+h3{
+	margin: 0px 0px 15px 0px;
+}
 @keyframes App-logo-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
