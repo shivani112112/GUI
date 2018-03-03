@@ -15,8 +15,8 @@ class App extends Component {
     this.state = {
       flag: true,
       location: "",
-      locationLat: ""
-      locationLong: ""
+      locationLat: "",
+      locationLong: "",
       temperature: "",
       condition:"",
       hi:"",
@@ -31,7 +31,7 @@ class App extends Component {
   }
   getLocation = () =>{
   $.ajax({
-    url: "http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/autoip.json",
+    url: "http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/wandstead.json",
     dataType: "jsonp",
     success : this.parseConditions,
     error : function(req, err){ console.log('API call failed ' + err); }
@@ -59,6 +59,7 @@ class App extends Component {
 
   render() {
     if(this.state.flag){
+      this.hello()
       this.getLocation()
       this.state.flag=false
   }
@@ -75,7 +76,7 @@ class App extends Component {
 
     );
   }
-  
+
   hello = () =>{
     console.log(navigator.geolocation.getCurrentPosition(this.success, this.error));
   }
