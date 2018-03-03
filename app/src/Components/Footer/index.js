@@ -23,13 +23,11 @@ class Footer extends Component {
         take.push(<img src={require('../../Images/sunglasses.png')} height="50px" width="50px"/>);
     }
     return (
-      <div>
-      <div className="App-intro">
-      <h3 align="left">What to take</h3>
-        {take}
-      <h3 align="left">Chance of Rain: {this.props.cofr}%</h3>
+      <div className="footer">
+		  <div className="footer.take"><h3>What to take</h3>{take}</div>
+      		<div className="footer.travel"></div>
       </div>
-      </div>
+      
     );
   }
 
