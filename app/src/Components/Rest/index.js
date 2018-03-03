@@ -26,7 +26,7 @@ class Rest extends Component {
 	}
 	return (
 		<div className="rest">
-			<table>
+			<table border="20px">
 				<tbody>
 					<div className="rest.times">
 						<tr>
