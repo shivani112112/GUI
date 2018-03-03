@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import Api from '../Api';
 
 class Rest extends Component {
 
@@ -21,26 +22,17 @@ class Rest extends Component {
     var uz=[];
     for(var i=0; i<7 ;i++){
       gobz.push(<td>{this.state.hours[i]}</td>);
-
-      //uz.push(<td className="{this.state.icons[0]}"  ></td>);
-      // console.log(name);
-      // var path="'../../Images/"  + ".png'";
-      // console.log(path);
-      // uz.push(<td><img src={require('../../Images/\{this.props.Icon[i]\}.png')} height="50 px" width="50 px"/></td>);
-
+      uz.push(<td className={this.state.icons[i]}></td>);
     }
     return (
       <div align="center">
-        <table border="5px">
+        <table border="2px">
           <tbody>
           <tr>
             {gobz}
           </tr>
           <tr>
-            <td className={this.state.icons[0]} >
-            {this.state.icons[0]}
-
-            </td>
+            {uz}
           </tr>
           </tbody>
         </table>
