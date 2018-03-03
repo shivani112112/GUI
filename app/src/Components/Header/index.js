@@ -8,8 +8,9 @@ class Header extends Component {
     return (
       <div>
       <div className="App-intro">
+        <img src={require('../../Images/search.png')} height="30 px" width="20 px" align="left"/>
           <p align="center">{this.props.location}</p>
-          <button onClick={this.hello}><img src={require('../../Images/search.png')} height="30 px" width="20 px" align="left"/></button>
+
         </div>
       </div>
     );
