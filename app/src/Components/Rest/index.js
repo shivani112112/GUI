@@ -33,7 +33,7 @@ class Rest extends Component {
 							{gobz}
 						</tr>
 					</div>
-					<div className="rest.icons"></div>
+					<div className="rest.icons">
 						<tr>
 							{uz}
 						</tr>
