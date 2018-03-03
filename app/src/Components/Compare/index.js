@@ -18,7 +18,7 @@ class Compare extends Component {
     }
     return (
       <div>
-      <div className="App-intro">
+      <div className="Compare">
           <p>{max}</p>
       </div>
       </div>
