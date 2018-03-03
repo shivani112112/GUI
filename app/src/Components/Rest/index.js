@@ -38,7 +38,7 @@ class Rest extends Component {
             {gobz}
           </tr>
           <tr>
-            <td className="{this.state.icons[0]}" >
+            <td className={this.state.icons[0]} >
             {this.state.icons[0]}
 
             </td>
