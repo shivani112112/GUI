@@ -10,14 +10,14 @@ class Conditions extends Component {
     return (
     <div className="conditions">
         <div className="conditions_l">
-            <div className="conditions_l_emoji">EMOJI</div>
+            <div className="conditions_l_emoji"><img src={require('../../Images/newmoon.png')}/></div>
             <div className="conditions_l_cond"><p>{this.props.condition}</p></div>
         </div>
 
           <div className="conditions_r">
-              <div className="conditions_r_hilo">H:{this.props.hi}&#176;</div>
+              <div className="conditions_r_hilo">H:    {this.props.hi}&#176;</div>
               <div className="conditions_r_temp">{this.props.temperature}&#176;</div>
-              <div className="conditions_r_hilo">L:{this.props.lo}&#176;</div>
+              <div className="conditions_r_hilo">L:    {this.props.lo}&#176;</div>
               <div className="conditions_r_fl">FEELS LIKE: {this.props.feelslike}&#176;</div>
           </div>
 

@@ -26,14 +26,14 @@ class Rest extends Component {
 	}
 	return (
 		<div className="rest">
-			<table border="1px">
+			<table >
 				<tbody>
-					<div className="rest.times">
+					<div className="rest_times">
 						<tr>
 							{gobz}
 						</tr>
 					</div>
-					<div className="rest.icons">
+					<div className="rest_icons">
 						<tr>
 							{uz}
 						</tr>

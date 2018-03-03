@@ -1,44 +1,61 @@
 .App {
-  padding:10px;
+    padding:10px;
+    background: linear-gradient(#336699, #993366);
+    height: 100%;
+    color: aliceblue;
+    text-shadow: 1px 1px 6px black;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 }
 
 .cloudy {
-  background-image: url("Images/scarf.png");
-  background-size: 40px 40px;
-  background-repeat: no-repeat;
-  height: 40px;
+    background-image: url("Images/scarf.png");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    height: 40px;
 
 }
 .chancerain {
-  background-image: url("http://icons.wxug.com/i/c/k/chancerain.gif");
-  background-size: 40px 40px;
-  background-repeat: no-repeat;
-  height: 40px;
+    background-image: url("http://icons.wxug.com/i/c/k/chancerain.gif");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    height: 40px;
 }
 
 .header{
-    color: blue;
+    color: white;
     width: 100%;
     height:40px;
+    font-family: "Mukta Mahee";
+    font-size: 19px;
+    margin-bottom: 10px
+}   
+
+.header_location{
+    width: fit-content;
+    margin: 0 auto;
 }
 .conditions{
     width:100%;
     min-height: 130px;
     display: block;
     font-family: "Mukta Mahee";
-    font-size: 22px;
+    font-size: 20px;
 }
 .conditions_l{
     width: 50%;
     float: left;
     height: 100%;
     text-align: center;
-    
+    margin-left: 0px;
+
+}
+.conditions_l_emoji{
+    height:150 px;
+    width:150 px;
 }
 
 .conditions_r{
@@ -49,25 +66,49 @@
 }
 .conditions_r_hilo{
     font-family: "Mukta Mahee";
-    font-size: 22px;
+    font-size: 25px;
 }
 
+
+.conditions_r_temp{
+    font-family:"Graduate";
+    font-size: 70px;
+    font-weight: 900;
+    text-shadow: 1px 1px 13px black;
+    margin-bottom: 2px;
+    margin-top: -5px;
+}
+
+.conditions_r_fl{
+    margin-top: 30px;
+}
+
+.rest{
+    margin: 50px 0px 0px 0px;
+    
+    
+}
 .compare{
     font-family: "Pacifico";
-    font-size: 22px;
+    font-size: 30px;
     min-width: 100%;
     text-align: center;
 }
-.conditions_r_temp{
-    font-family:"Graduate";
-    font-size: 50px;
-    font-weight: 900;
+
+table{
+    
+    background-color:rgba(0,0,0,0.2);
+}
+
+.footer{
+    background-color:rgba(0,0,0,0.2);
 }
 td{
     width: 50px;
+    text-align: center;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }

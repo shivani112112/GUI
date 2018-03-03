@@ -24,8 +24,8 @@ class Footer extends Component {
     }
     return (
       <div className="footer">
-		  <div className="footer.take"><h3>What to take</h3>{take}</div>
-      		<div className="footer.travel"></div>
+		  <div className="footer_take"><h3>What to take</h3>{take}</div>
+      		<div className="footer_travel"></div>
       </div>
       
     );
