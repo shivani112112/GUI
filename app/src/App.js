@@ -31,7 +31,8 @@ class App extends Component {
   }
   getLocation = () =>{
     //var long = this.state.locationLong;
-    var url="http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/UK/London.json"
+    console.log(this.state.locationLat)
+    var url="http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/"+this.state.locationLat+","+this.state.locationLong+".json"
     console.log(url)
   $.ajax({
     url: url,
@@ -61,11 +62,11 @@ class App extends Component {
 }
 
   render() {
+   //   if(this.state.flag){
     this.hello()
-    if(this.state.flag){
-      this.getLocation()
-      this.state.flag=false
-  }
+   //     this.getLocation()
+   //     this.state.flag=false
+   // }
 
     return (
       <div className="App">
@@ -81,14 +82,21 @@ class App extends Component {
   }
 
   hello = () =>{
-    console.log(navigator.geolocation.getCurrentPosition(this.success, this.error));
+    console.log(navigator.geolocation.getCurrentPosition(this.success, this.error))
   }
   success = (pos) => {
   var crd = pos.coords;
-  this.setState({locationLat:crd.latitude, locationLong:crd.longitude})
+  this.setState({locationLat:crd.latitude, locationLong:crd.longitude}
+    ,() => {
+      if(this.state.flag){
+        this.getLocation()
+        this.state.flag=false
+    }
+    }
+  )
 };
 
-error = (err) => {
+  error = (err) => {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 };
   parseConditions = (parsed_json) => {
