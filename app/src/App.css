@@ -21,11 +21,12 @@
   height: 40px;
 }
 
-
 .header{
     color: blue;
 }
-
+.conditions.r{
+    color: red;
+}
 td{
     width: 50px;
 }
