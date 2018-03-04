@@ -28,6 +28,7 @@ class Header extends Component {
           </div>
           <div className="header_search"><button onClick={this.changeLocation.bind(this)}><img src={require('../../Images/search.png')} height="20 px" width="20 px"/></button></div>
             <div className="header_location"><p align="center">{this.props.location}</p></div>
+
       </div>
 
     );
