@@ -111,7 +111,8 @@ setLocation = () => {
 });
 
   this.render();
-
+  document.getElementById("header_dropdown").style.height="0%";
+  document.getElementById("header_dropdown").style.top="-40%";
 
 }
 
@@ -129,7 +130,7 @@ setLocation = () => {
           <div id="header_dropdown">
 
               <input  name="uzair" id="search"  />
-              <button onClick={this.setLocation}> Name </button>
+              <button onClick={this.setLocation}> Search </button>
 
           </div>
           <div className="header_search"><button onClick={this.changeLocation.bind(this)}><img src={require('./Images/search.png')} height="20 px" width="20 px"/></button></div>
