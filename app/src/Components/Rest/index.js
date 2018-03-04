@@ -23,7 +23,8 @@ class Rest extends Component {
 		for(var i=0; i<7 ;i++){
 			gobz.push(<td>{this.state.hours[i]}</td>);
 			uz.push(<td className={this.state.icons[i]}></td>);
-	}
+		}
+		console.log(this.state.icons);
 	return (
 		<div className="rest">
 			<table >
