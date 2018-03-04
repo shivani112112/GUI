@@ -4,8 +4,7 @@
 
     color: aliceblue;
     text-shadow: 1px 1px 6px black;
-	display: inline-block;
-	position: absolute
+
 }
 
 .App-logo {
@@ -14,7 +13,23 @@
 }
 
 .cloudy {
-    background-image: url("Images/scarf.png");
+    background-image: url("Images/cloudy.png");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    height: 40px;
+
+}
+
+.mostlycloudy {
+    background-image: url("Images/mostlycloudy.png");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    height: 40px;
+
+}
+
+.fog {
+    background-image: url("Images/hat.png");
     background-size: 40px 40px;
     background-repeat: no-repeat;
     height: 40px;
