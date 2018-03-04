@@ -27,7 +27,7 @@ class Rest extends Component {
 		console.log(this.state.icons);
 	return (
 		<div className="rest">
-			<table >
+			<table border="1px">
 				<tbody>
 					<div className="rest_times">
 						<tr>

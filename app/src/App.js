@@ -73,7 +73,10 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Header location={this.state.location} />
+        <div className="header">
+          <button onClick={this.changeLocation.bind(this)}><div className="header_search"><img src={require('./Images/search.png')} height="20 px" width="20 px"/></div></button>
+          <div className="header_location"><p align="center">{this.props.location}</p></div>
+      	</div>
         <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
         <Rest/>
           <Compare yHi={this.state.yesterdayHi} yLo={this.state.yesterdayLo} high={this.state.hi} low={this.state.lo}/>
@@ -136,6 +139,13 @@ hideSnackbar() {
     var Rain=parsed_json['trip']['chance_of']['chanceofrainday']['percentage']
     this.setState({rain:Rain});
   }
+  
+  
+  
+  changeLocation=(e)=> {
+    console.log("Hello")
+
+    }
 
 }
 
