@@ -35,6 +35,7 @@ class App extends Component {
   }
   getLocation = () =>{
     //var long = this.state.locationLong;
+<<<<<<< HEAD
     //var long = this.state.locationLong;
       //console.log(this.state.locationLat
       console.log(document.getElementById('search').value);
@@ -112,6 +113,41 @@ setLocation = () => {
 
   this.render();
 
+=======
+    console.log(this.state.search)
+    var url="http://api.wunderground.com/api/1671bd6891040bea/conditions/q/"+this.state.locationLat+","+this.state.locationLong+".json"
+    console.log(url)
+  $.ajax({
+    url: url,
+    dataType: "jsonp",
+    success : this.parseConditions,
+    error : function(req, err){ console.log('API call failed ' + err); }
+  })
+  $.ajax({
+    url: "http://api.wunderground.com/api/1671bd6891040bea/yesterday/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+    dataType: "jsonp",
+    success : this.parseYesterday,
+    error : function(req, err){ console.log('API call failed ' + err); }
+  })
+
+  $.ajax({
+    url: "http://api.wunderground.com/api/1671bd6891040bea/forecast10day/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+    dataType: "jsonp",
+    success : this.parseForecast,
+    error : function(req, err){ console.log('API call failed ' + err); }
+  })
+  $.ajax({
+    url: "http://api.wunderground.com/api/1671bd6891040bea/planner_07010731/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+    dataType: "jsonp",
+    success : this.parseRain,
+    error : function(req, err){ console.log('API call failed ' + err); }
+  })
+}
+
+setLocation = (theSearch) => {
+  console.log(theSearch);
+  this.setState({search:theSearch});
+>>>>>>> c1f0194784532e155498da7c2edec60383c1ccf7
 
 }
 
