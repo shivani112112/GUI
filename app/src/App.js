@@ -31,10 +31,11 @@ class App extends Component {
       isSnackbarActive: true,
       search:""
     };
+    this.setLocation.bind(this)
   }
   getLocation = () =>{
     //var long = this.state.locationLong;
-    console.log(this.state.locationLat)
+    console.log(this.state.search)
     var url="http://api.wunderground.com/api/1671bd6891040bea/conditions/q/"+this.state.locationLat+","+this.state.locationLong+".json"
     console.log(url)
   $.ajax({
@@ -64,10 +65,10 @@ class App extends Component {
   })
 }
 
-setLocation = (search) => {
-  this.setState({
-    search:""
-  })
+setLocation = (theSearch) => {
+  console.log(theSearch);
+  this.setState({search:theSearch});
+
 }
 
   render() {
