@@ -34,11 +34,12 @@
     font-family: "Mukta Mahee";
     font-size: 19px;
     margin-bottom: 10px
-}   
+}
 
 .header_location{
     width: fit-content;
     margin: 0 auto;
+    margin-top: -50px;
 }
 .conditions{
 	display: inline-block;
@@ -88,8 +89,8 @@
 
 .rest{
     margin: 0px;
-    
-    
+
+
 }
 .compare{
     font-family: "Pacifico";
@@ -99,7 +100,7 @@
 }
 
 table{
-    
+
     background-color:rgba(0,0,0,0.2);
 }
 
@@ -107,7 +108,7 @@ table{
 	width: 100%;
 	display: inline-block;
 	text-align: center;
-	
+
 }
 
 .footer_take{

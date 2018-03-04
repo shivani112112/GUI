@@ -1,7 +1,6 @@
 import React, {render, Component } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import Api from '../Api';
 
 class Conditions extends Component {
 

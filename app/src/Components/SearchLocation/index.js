@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import Header from '../Header';
 
 class SearchLocation extends Component {
 
