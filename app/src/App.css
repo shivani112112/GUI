@@ -1,176 +1,161 @@
-.App {
-    padding:10px;
-    background: linear-gradient(#336699, #993366);
-
-    color: aliceblue;
-    text-shadow: 1px 1px 6px black;
-
-}
-
-.App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
-}
-
-.cloudy {
-    background-image: url("Images/cloudy.png");
-    background-size: 40px 40px;
-    background-repeat: no-repeat;
-
-
-}
-
-.mostlycloudy {
-    background-image: url("Images/mostlycloudy.png");
-    background-size: 40px 40px;
-    background-repeat:no-repeat;
-	background-position: center;
-
-
-}
-
-.fog {
-    background-image: url("Images/hat.png");
-    background-size: 40px 40px;
-    background-repeat: no-repeat;
-
-}
-.chancerain {
-    background-image: url("http://icons.wxug.com/i/c/k/chancerain.gif");
-    background-size: 40px 40px;
-    background-repeat: no-repeat;
+.App{
+ background: url("Images/backgroundtest.jpeg");
+ background-repeat: no-repeat;
+ background-size:cover;
+ height:100vh;
+ color: aliceblue;
+  text-shadow: 1px 1px 6px black;
 
 }
 
 .header{
-    color: white;
-    width: 100%;
-    height:40px;
-    font-family: "Mukta Mahee";
-    font-size: 19px;
-    margin-bottom: 10px
+      font-size: 19px;
+      margin-bottom: 10px;
+      padding:10px;
 }
-#header_dropdown{
-    width:100%;
-    height:0%;
-    background-color:black;
-    position:absolute;
-    top:-40%;
-    z-index:1;
-    transition: 0.9s;
-    display: inline-block;
+
+.header_search{
+
 }
+
 .header_location{
-    width: fit-content;
+  width: fit-content;
     margin: 0 auto;
-    margin-top: -50px;
+    margin-top:-48px;
 }
+
 .conditions{
-	display: inline-block;
+
+ display: inline-block;
 	position:relative;
     width:100%;
-    min-height: 130px;
+    height:35%;
     font-family: "Mukta Mahee";
     font-size: 20px;
 }
+
 .conditions_l{
-    width: 50%;
+
+  width: 50%;
     float: left;
     height: 100%;
     text-align: center;
     margin-left: 0px;
 
 }
-.conditions_l_emoji{
-    height:150 px;
-    width:150 px;
-}
 
 .conditions_r{
-    width: 50%;
+  width: 50%;
     float:right;
     height: 100%;
     text-align: center;
-}
-.conditions_r_hilo{
-    font-family: "Mukta Mahee";
-    font-size: 25px;
+
 }
 
+.conditions_l_emoji{
+  height:150 px;
+    width:150 px;
+
+}
+
+.cloudy {
+    background-image: url("Images/scarf.png");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    height: 40px;
+
+}
+.chancerain {
+    background-image: url("http://icons.wxug.com/i/c/k/chancerain.gif");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    height: 40px;
+}
+
+
+.conditions_l_cond{
+
+}
+
+.conditions_r_hilo{
+  font-family: "Mukta Mahee";
+    font-size: 25px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+}
 
 .conditions_r_temp{
-    font-family:"Graduate";
-    font-size: 70px;
-    font-weight: 900;
-    text-shadow: 1px 1px 13px black;
-    margin-bottom: 2px;
-    margin-top: -5px;
+  font-family:"Graduate";
+  font-size: 70px;
+  font-weight: 900;
+  text-shadow: 1px 1px 13px black;
+  margin-bottom: 2px;
+  margin-top: -5px;
 }
 
 .conditions_r_fl{
-    margin-top: 30px;
+  margin-top: 12px;
+
 }
 
 .rest{
-    margin: 0px;
-	font-size: 14px;
+  min-width: 100%;
+}
 
+.rest_times{
+  width:100%;
+}
+
+.rest_icons{
+  width:100%;
 
 }
+
+table{
+  border:1px solid-black;
+     width: 100%;
+    background-color:rgba(0,0,0,0.2);
+    table-layout: fixed;
+    color: hotpink;
+    display: block;
+}
+
+tr{
+min-width: 100%;
+}
+td{
+  min-width: 14%
+}
+
+
 .compare{
-    font-family: "Pacifico";
+  font-family: "Pacifico";
     font-size: 30px;
     min-width: 100%;
     text-align: center;
 }
 
-table{
-	width: 100%;
-	table-layout: fixed;
-    background-color:rgba(0,0,0,0.2);
-}
-
 .footer{
-	width: 100%;
-	display: inline-block;
-	text-align: center;
-
+  width: 100%;
+display: inline-block;
+text-align: center;
 }
 
 .footer_take{
-	padding-top: 5px;
-	width: 48%;
-    background-color:rgba(0,0,0,0.2);
-    float:left;
+
+  padding-top: 5px;
+  	width: 48%;
+      background-color:rgba(0,0,0,0.2);
+      float:left;
+      min-height: 150px;
 }
 
 .footer_travel{
-	padding-top: 5px;
+  padding-top: 5px;
 	height: 50px;
 	width: 48%;
     background-color:rgba(0,0,0,0.2);
     float:right;
-}
-
-td{
-    width: 14%;
-    text-align: center;
-	
-	
-}
-
-tr{
-	width: 100%;
-}
-
-table{
-	
-}
-
-h3{
-	margin: 0px 0px 15px 0px;
-}
-@keyframes App-logo-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+      min-height: 150px;
 }
