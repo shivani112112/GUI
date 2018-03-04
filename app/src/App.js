@@ -8,6 +8,7 @@ import Rest from './Components/Rest';
 import Footer from './Components/Footer'
 import Api from './Components/Api';
 import $ from 'jquery';
+import { Snackbar } from 'react';
 
 class App extends Component {
   constructor(props) {
@@ -25,8 +26,9 @@ class App extends Component {
       yesterdayHi:20,
       yesterdayLo:10,
       rain:"",
-      hours:new Array(),
-      icons:new Array()
+      hours:[],
+      icons:[],
+      isSnackbarActive: true
     };
   }
   getLocation = () =>{
@@ -70,7 +72,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        
+
         <Header location={this.state.location} />
         <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
         <Rest/>
@@ -99,6 +101,18 @@ class App extends Component {
   error = (err) => {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 };
+
+handleShowSnackbar() {
+  this.setState({
+    isSnackbarActive: true
+  });
+}
+
+hideSnackbar() {
+  this.setState({
+    isSnackbarActive: false
+  });
+}
   parseConditions = (parsed_json) => {
     var theLocation = parsed_json['current_observation']['observation_location']['city'];
     var temp = parsed_json['current_observation']['temp_c'];

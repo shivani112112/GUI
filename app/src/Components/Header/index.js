@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import Api from '../Api';
+window.jQuery = $;
+//require('geocomplete');
 
 class Header extends Component {
+  componentDidMount() {
+  const self = this;
+
+  $('.header_search').on('click', function(e) {
+    e.preventDefault();
+    $('.add-location-dialog').slideDown();
+  });
+}
+
   render() {
     return (
 
@@ -15,6 +25,8 @@ class Header extends Component {
 
     );
   }
+
+
 }
 
 export default Header;
