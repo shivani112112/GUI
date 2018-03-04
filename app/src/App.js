@@ -8,6 +8,7 @@ import Rest from './Components/Rest';
 import Footer from './Components/Footer'
 import Api from './Components/Api';
 import $ from 'jquery';
+import { Snackbar } from 'react';
 
 class App extends Component {
   constructor(props) {
@@ -25,14 +26,15 @@ class App extends Component {
       yesterdayHi:20,
       yesterdayLo:10,
       rain:"",
-      hours:new Array(),
-      icons:new Array()
+      hours:[],
+      icons:[],
+      isSnackbarActive: true
     };
   }
   getLocation = () =>{
     //var long = this.state.locationLong;
     console.log(this.state.locationLat)
-    var url="http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/"+this.state.locationLat+","+this.state.locationLong+".json"
+    var url="http://api.wunderground.com/api/1671bd6891040bea/conditions/q/"+this.state.locationLat+","+this.state.locationLong+".json"
     console.log(url)
   $.ajax({
     url: url,
@@ -41,20 +43,20 @@ class App extends Component {
     error : function(req, err){ console.log('API call failed ' + err); }
   })
   $.ajax({
-    url: "http://api.wunderground.com/api/61fa425d356c6fd4/yesterday/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+    url: "http://api.wunderground.com/api/1671bd6891040bea/yesterday/q/"+this.state.locationLat+","+this.state.locationLong+".json",
     dataType: "jsonp",
     success : this.parseYesterday,
     error : function(req, err){ console.log('API call failed ' + err); }
   })
 
   $.ajax({
-    url: "http://api.wunderground.com/api/61fa425d356c6fd4/forecast10day/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+    url: "http://api.wunderground.com/api/1671bd6891040bea/forecast10day/q/"+this.state.locationLat+","+this.state.locationLong+".json",
     dataType: "jsonp",
     success : this.parseForecast,
     error : function(req, err){ console.log('API call failed ' + err); }
   })
   $.ajax({
-    url: "http://api.wunderground.com/api/61fa425d356c6fd4/planner_07010731/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+    url: "http://api.wunderground.com/api/1671bd6891040bea/planner_07010731/q/"+this.state.locationLat+","+this.state.locationLong+".json",
     dataType: "jsonp",
     success : this.parseRain,
     error : function(req, err){ console.log('API call failed ' + err); }
@@ -70,7 +72,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        
+
         <Header location={this.state.location} />
         <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
         <Rest/>
@@ -82,7 +84,7 @@ class App extends Component {
   }
 
   hello = () =>{
-    console.log(navigator.geolocation.getCurrentPosition(this.success, this.error))
+    navigator.geolocation.getCurrentPosition(this.success, this.error)
   }
   success = (pos) => {
   var crd = pos.coords;
@@ -99,6 +101,18 @@ class App extends Component {
   error = (err) => {
   console.warn(`ERROR(${err.code}): ${err.message}`);
 };
+
+handleShowSnackbar() {
+  this.setState({
+    isSnackbarActive: true
+  });
+}
+
+hideSnackbar() {
+  this.setState({
+    isSnackbarActive: false
+  });
+}
   parseConditions = (parsed_json) => {
     var theLocation = parsed_json['current_observation']['observation_location']['city'];
     var temp = parsed_json['current_observation']['temp_c'];
