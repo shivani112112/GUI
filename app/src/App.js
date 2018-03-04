@@ -28,7 +28,8 @@ class App extends Component {
       rain:"",
       hours:[],
       icons:[],
-      isSnackbarActive: true
+      isSnackbarActive: true,
+      search:""
     };
   }
   getLocation = () =>{
@@ -63,6 +64,12 @@ class App extends Component {
   })
 }
 
+setLocation = (search) => {
+  this.setState({
+    search:""
+  })
+}
+
   render() {
    //   if(this.state.flag){
     this.hello()
@@ -73,7 +80,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Header location={this.state.location} />
+        <Header location={this.state.location} search={this.setLocation}/>
         <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
         <Rest/>
           <Compare yHi={this.state.yesterdayHi} yLo={this.state.yesterdayLo} high={this.state.hi} low={this.state.lo}/>
