@@ -64,7 +64,10 @@ class Rest extends Component {
 			var hour=new Array();
 			var icon= new Array();
 			for (var i = 0; i < 7; i++) {
-				hour[i]=parsed_json['hourly_forecast'][i]['FCTTIME']['civil'];
+				var temp = parsed_json['hourly_forecast'][i]['FCTTIME']['civil'];
+				temp = temp.split(" ")
+				var temp1 = temp[0].split(":");
+				hour[i]=temp1[0]+" "+temp[1];
 				icon[i]=parsed_json['hourly_forecast'][i]['icon'];
 			}
 			// var yHi=4;
