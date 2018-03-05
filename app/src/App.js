@@ -169,7 +169,7 @@ document.getElementById("header_dropdown").style.top="-40%";
 
 
 changeLocation=(e)=> {
-    document.getElementById("header_dropdown").style.height="10%";
+    document.getElementById("header_dropdown").style.height="7%";
     document.getElementById("header_dropdown").style.top="0%";
   }
 
