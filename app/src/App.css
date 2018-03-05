@@ -59,11 +59,12 @@
 
 }
 
-.cloudy {
-    background-image: url("Images/scarf.png");
+.partlycloudy {
+    background-image: url("Images/cloudy.png");
     background-size: 40px 40px;
     background-repeat: no-repeat;
     height: 40px;
+	background-position: center
 
 }
 .chancerain {
