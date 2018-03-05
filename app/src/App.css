@@ -154,9 +154,9 @@ text-align: center;
       min-height: 150px;
 }
 
-/*.footer_take:hover{
+button:hover{
       background-color:rgba(0,0,0,0.5);
-}*/
+}
 
 .footer_travel{
   padding-top: 5px;
