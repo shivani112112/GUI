@@ -8,6 +8,7 @@
 
 }
 
+
 .header{
       font-size: 19px;
       margin-bottom: 10px;
@@ -99,34 +100,61 @@
 
 }
 
-.rest{
-  min-width: 100%;
+/* .rest{
+  background-color: blue;
+  min-height: 10%;
 }
 
 .rest_times{
+  background-color: orange;
+
+
   width:100%;
+  min-height: 10%;
 }
 
 .rest_icons{
+  background-color:hotpink;
   width:100%;
+  min-height: 50%;
 
 }
 
 table{
-  border:1px solid-black;
+   border:1px;
      width: 100%;
     background-color:rgba(0,0,0,0.2);
-    table-layout: fixed;
-    color: hotpink;
-    display: block;
+    color: yellow;
+
+
 }
 
-tr{
-min-width: 100%;
-}
+
+
 td{
-  min-width: 14%
+  background-color: green;
+  width: auto;
+
+  padding:10%;
+
+} */
+
+.rest{
+
+
 }
+
+
+
+
+
+  table {
+    width: 100%;
+    text-align: center;
+    min-height: 80px;
+      background-color:rgba(0,0,0,0.2);
+  }
+
 
 
 .compare{
@@ -151,7 +179,7 @@ text-align: center;
     z-index:1;
     transition: 0.9s;
     display: inline-block;
-} 
+}
 
 .footer_take{
 

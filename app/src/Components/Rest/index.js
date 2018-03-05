@@ -27,19 +27,13 @@ class Rest extends Component {
 		console.log(this.state.icons);
 	return (
 		<div className="rest">
-			<table border="1px">
-				<tbody>
-					<div className="rest_times">
+			<table>
 						<tr>
 							{gobz}
 						</tr>
-					</div>
-					<div className="rest_icons">
 						<tr>
 							{uz}
 						</tr>
-					</div>
-				</tbody>
 			</table>
 		</div>
 	);
