@@ -103,7 +103,7 @@ class App extends Component {
 
 setLocation = () => {
   var temp = document.getElementById('search').value;
-  temp.replace(" ","_");
+  temp = temp.replace(" ","_");
   this.setState({search1: temp}
 ,() => {
   console.log(this.state.search1);
