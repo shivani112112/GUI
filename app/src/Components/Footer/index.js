@@ -46,6 +46,7 @@ class Footer extends Component {
 		  </button></div>
       </div>
 
+
     );
   }
   showWhatToTake =(e) =>{
