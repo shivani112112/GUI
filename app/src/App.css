@@ -1,18 +1,18 @@
 .App{
- background: url("Images/night.jpg");
- background-repeat: no-repeat;
- background-size:cover;
- height:100vh;
- color: aliceblue;
-  text-shadow: 1px 1px 6px black;
+	background: url("Images/night.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+	height:100vh;
+	color: aliceblue;
+	text-shadow: 1px 1px 6px black;
 
 }
 
 
 .header{
-      font-size: 19px;
-      margin-bottom: 10px;
-      padding:10px;
+	font-size: 19px;
+	margin-bottom: 10px;
+	padding:10px;
 }
 
 .header_search{
@@ -20,58 +20,58 @@
 }
 
 .header_location{
-  width: fit-content;
-    margin: 0 auto;
-    margin-top:-48px;
+	width: fit-content;
+	margin: 0 auto;
+	margin-top:-48px;
 }
 
 .conditions{
 
- display: inline-block;
+	display: inline-block;
 	position:relative;
-    width:100%;
-    height:35%;
-    font-family: "Mukta Mahee";
-    font-size: 20px;
+	width:100%;
+	height:35%;
+	font-family: "Mukta Mahee";
+	font-size: 20px;
 }
 
 .conditions_l{
 
-  width: 50%;
-    float: left;
-    height: 100%;
-    text-align: center;
-    margin-left: 0px;
+	width: 50%;
+	float: left;
+	height: 100%;
+	text-align: center;
+	margin-left: 0px;
 
 }
 
 .conditions_r{
-  width: 50%;
-    float:right;
-    height: 100%;
-    text-align: center;
+	width: 50%;
+	float:right;
+	height: 100%;
+	text-align: center;
 
 }
 
 .conditions_l_emoji{
-  height:150 px;
-    width:150 px;
+	height:150 px;
+	width:150 px;
 
 }
 
 .partlycloudy {
-    background-image: url("Images/cloudy.png");
-    background-size: 40px 40px;
-    background-repeat: no-repeat;
-    height: 40px;
+	background-image: url("Images/cloudy.png");
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	height: 40px;
 	background-position: center
 
 }
 .chancerain {
-    background-image: url("http://icons.wxug.com/i/c/k/chancerain.gif");
-    background-size: 40px 40px;
-    background-repeat: no-repeat;
-    height: 40px;
+	background-image: url("http://icons.wxug.com/i/c/k/chancerain.gif");
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	height: 40px;
 }
 
 
@@ -80,24 +80,24 @@
 }
 
 .conditions_r_hilo{
-  font-family: "Mukta Mahee";
-    font-size: 25px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+	font-family: "Mukta Mahee";
+	font-size: 25px;
+	padding-bottom: 5px;
+	padding-top: 5px;
 
 }
 
 .conditions_r_temp{
-  font-family:"Graduate";
-  font-size: 70px;
-  font-weight: 900;
-  text-shadow: 1px 1px 13px black;
-  margin-bottom: 2px;
-  margin-top: -5px;
+	font-family:"Graduate";
+	font-size: 70px;
+	font-weight: 900;
+	text-shadow: 1px 1px 13px black;
+	margin-bottom: 2px;
+	margin-top: -5px;
 }
 
 .conditions_r_fl{
-  margin-top: 12px;
+	margin-top: 12px;
 
 }
 
@@ -109,90 +109,96 @@
 
 
 
-  table {
-    width: 100%;
-    text-align: center;
-    min-height: 80px;
-      background-color:rgba(0,0,0,0.2);
-  }
+table {
+	width: 100%;
+	text-align: center;
+	min-height: 80px;
+	background-color:rgba(0,0,0,0.2);
+}
 
 
 
 .compare{
-  font-family: "Pacifico";
-    font-size: 30px;
-    min-width: 100%;
-    text-align: center;
+	font-family: "Pacifico";
+	font-size: 30px;
+	min-width: 100%;
+	text-align: center;
 }
 
 .footer{
-  width: 100%;
-display: inline-block;
-text-align: center;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
 }
 
 #header_dropdown{
-    width:90%;
-    height:0%;
+	width:90%;
+	height:0%;
 	left:40px;
-    background-color:rgba(0,0,0,0.2);
-    position:absolute;
-    top:-40%;
-    z-index:1;
-    transition: 0.9s;
-    display: inline-block;
+	background-color:rgba(0,0,0,0.2);
+	position:absolute;
+	top:-40%;
+	z-index:1;
+	transition: 0.9s;
+	display: inline-block;
 	padding-top: 5px;
 	padding-left: 10px;
 }
 
 #theTake{
-  top:57.5vh;
-  height:300%;
-  width:100%;
-  position:absolute;
-  background-color:rgba(0,0,0,0.2);
-  left:-100%;
-  z-index:1;
-  transition: 0.9s;
-  display: inline-block;
+	display: inline-block;
+	top:57.5vh;
+	height:300%;
+	width:100%;
+	position:absolute;
+	background-color:rgba(0,0,0,0.7);
+	left:-100%;
+	z-index:1;
+	transition: 0.9s;
+	display: inline-block;
 }
 #theTravel{
-  top:57.5vh;
-  height:300%;
-  width:100%;
-  position:absolute;
-  background-color:rgba(0,0,0,0.2);
-  left:-100%;
-  z-index:1;
-  transition: 0.9s;
-  display: inline-block;
+	top:57.5vh;
+	height:300%;
+	width:100%;
+	position:absolute;
+	background-color:rgba(0,0,0,0.7);
+	left:-100%;
+	z-index:1;
+	transition: 0.9s;
+	display: inline-block;
+}
+
+.closebutton{
+	width: 100%;
+	height: 100%;
 }
 
 
 .footer_take{
 
-  padding-top: 5px;
-  	width: 48%;
-      background-color:rgba(0,0,0,0.2);
-      float:left;
-      min-height: 150px;
+	padding-top: 5px;
+	width: 48%;
+	background-color:rgba(0,0,0,0.2);
+	float:left;
+	min-height: 150px;
 }
 
 .footer_take:hover{
-      background-color:rgba(0,0,0,0.5);
+	background-color:rgba(0,0,0,0.5);
 }
 
 .footer_travel{
-  padding-top: 5px;
+	padding-top: 5px;
 	height: 50px;
 	width: 48%;
-    background-color:rgba(0,0,0,0.2);
-    float:right;
-      min-height: 150px;
+	background-color:rgba(0,0,0,0.2);
+	float:right;
+	min-height: 150px;
 }
 
 .footer_travel:hover{
-      background-color:rgba(0,0,0,0.5);
+	background-color:rgba(0,0,0,0.5);
 }
 
 input {
