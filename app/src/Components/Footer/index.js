@@ -9,11 +9,11 @@ class Footer extends Component {
 	var takebig=[];
     if(this.props.Conditions == "rain"){
         takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
-  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>It is currently raining so don't forget your umbrella!</td></tr>);  
+  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>It is currently raining so dont forget your umbrella!</td></tr>);  
   }
 	else if(this.props.cofr>50){
 		takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
-		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>The chance of rain for today is {this.props.cofr}% today so dont forget your umbrlla!</td></tr>); 
+		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>The chance of rain for today is {this.props.cofr}% today so dont forget your umbrlla!</td></tr>);
 	}
     if(this.props.Temperature<14 || this.props.low<10){
       takesmall.push(<img src={require('../../Images/jacket.png')} height="40px" width="40px"/>);
@@ -57,12 +57,12 @@ class Footer extends Component {
       console.log("Bye")
       document.getElementById("theTravel").style.left="0%"
   }
-  
+
   closeTake= (e) =>{
       console.log("Bye")
       document.getElementById("theTake").style.left="-100%"
   }
-  
+
   closeTravel= (e) =>{
       console.log("Bye")
       document.getElementById("theTravel").style.left="-100%"
