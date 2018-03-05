@@ -145,6 +145,30 @@ text-align: center;
 	padding-left: 10px;
 }
 
+#theTake{
+  top:57.5vh;
+  height:300%;
+  width:100%;
+  position:absolute;
+  background-color:rgba(0,0,0,0.2);
+  left:-100%;
+  z-index:1;
+  transition: 0.9s;
+  display: inline-block;
+}
+#theTravel{
+  top:57.5vh;
+  height:300%;
+  width:100%;
+  position:absolute;
+  background-color:rgba(0,0,0,0.2);
+  left:-100%;
+  z-index:1;
+  transition: 0.9s;
+  display: inline-block;
+}
+
+
 .footer_take{
 
   padding-top: 5px;
@@ -166,7 +190,7 @@ text-align: center;
 input {
 	margin-right: 10px;
 	width: 80%;
-	
+
 }
 
 button{

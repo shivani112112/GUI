@@ -27,19 +27,19 @@ class Footer extends Component {
 
 		      <button className="footer_take" onClick={this.showWhatToTake.bind(this)}><div><h3>What to take</h3>{take}</div></button>
       		<button className="footer_travel" onClick={this.showTravel.bind(this)}><div><h3>Travel</h3></div></button>
-          <div className=""></div>
-          <div className=""></div>
-
-
+          <button id="theTake"><div><p> Hello there </p></div></button>
+          <button id="theTake"><div><p> Hello there, just too cheeky </p></div></button>
       </div>
 
     );
   }
   showWhatToTake =(e) =>{
       console.log("Hello")
+      document.getElementById("theTake").style.left="0%"
   }
   showTravel= (e) =>{
       console.log("Bye")
+      document.getElementById("theTravel").style.left="0%"
   }
 
 }
