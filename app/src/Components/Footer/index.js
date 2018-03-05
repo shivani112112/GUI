@@ -24,13 +24,20 @@ class Footer extends Component {
     }
     return (
       <div className="footer">
-		  <button className="footer_take"><div><h3>What to take</h3>{take}</div></button>
-      		<button className="footer_travel"><div><h3>Travel</h3></div></button>
+		      <button className="footer_take" onClick={this.showWhatToTake.bind(this)}><div><h3>What to take</h3>{take}</div></button>
+      		<button className="footer_travel" onClick={this.showTravel.bind(this)}><div><h3>Travel</h3></div></button>
+          <div className=""></div>
+          <div className=""></div>
       </div>
 
     );
   }
-
+  showWhatToTake =(e) =>{
+      console.log("Hello")
+  }
+  showTravel= (e) =>{
+      console.log("Bye")
+  }
 
 }
 export default Footer;
