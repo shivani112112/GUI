@@ -13,7 +13,7 @@ class Footer extends Component {
   }
 	else if(this.props.cofr>50){
 		takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
-		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>The chance of rain for today is {this.props.cofr}% today so dont forget your umbrlla!</td></tr>);
+		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>The chance of rain for today is {this.props.cofr}% today so dont forget your umbrella!</td></tr>);
 	}
     if(this.props.Temperature<14 || this.props.low<10){
       takesmall.push(<img src={require('../../Images/jacket.png')} height="40px" width="40px"/>);
