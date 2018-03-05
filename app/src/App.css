@@ -132,15 +132,17 @@ text-align: center;
 }
 
 #header_dropdown{
-    width:85%;
+    width:90%;
     height:0%;
-	left:60px;
-    background-color:black;
+	left:40px;
+    background-color:rgba(0,0,0,0.2);
     position:absolute;
     top:-40%;
     z-index:1;
     transition: 0.9s;
     display: inline-block;
+	padding-top: 5px;
+	padding-left: 10px;
 }
 
 .footer_take{
@@ -159,6 +161,12 @@ text-align: center;
     background-color:rgba(0,0,0,0.2);
     float:right;
       min-height: 150px;
+}
+
+input {
+	margin-right: 10px;
+	width: 80%;
+	
 }
 
 button{
