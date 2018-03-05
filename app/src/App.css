@@ -154,7 +154,7 @@ text-align: center;
       min-height: 150px;
 }
 
-button:hover{
+.footer_take:hover{
       background-color:rgba(0,0,0,0.5);
 }
 
@@ -165,6 +165,10 @@ button:hover{
     background-color:rgba(0,0,0,0.2);
     float:right;
       min-height: 150px;
+}
+
+.footer_travel:hover{
+      background-color:rgba(0,0,0,0.5);
 }
 
 input {
