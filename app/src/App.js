@@ -173,7 +173,10 @@ changeLocation=(e)=> {
   }
 
   parseConditions = (parsed_json) => {
-    var theLocation = parsed_json['current_observation']['observation_location']['city'];
+    
+	var obs = parsed_json['current_observation']['observation_location']['city'];
+	var disp = parsed_json['current_observation']['display_location']['city']
+	var theLocation = disp+", "+obs.split(" ")[obs.split(" ").length-1];
     var temp = parsed_json['current_observation']['temp_c'];
     var cond = parsed_json['current_observation']['weather'];
     var fl= parsed_json['current_observation']['feelslike_c'];
