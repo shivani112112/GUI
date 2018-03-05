@@ -13,6 +13,8 @@ class Header extends Component {
   setLocation = () => {
     var search = document.getElementById("searchBox").value;
     this.props.search(search);
+    document.getElementById("header_dropdown").style.height="0%";
+    document.getElementById("header_dropdown").style.top="-40%";
   }
 
   render() {

@@ -110,6 +110,8 @@ setLocation = () => {
   this.getLocation();
 });
 
+document.getElementById("header_dropdown").style.height="0%";
+document.getElementById("header_dropdown").style.top="-40%";
   this.render();
 
 
@@ -129,13 +131,13 @@ setLocation = () => {
           <div id="header_dropdown">
 
               <input  name="uzair" id="search"  />
-              <button onClick={this.setLocation}> Name </button>
+              <button onClick={this.setLocation}> Search </button>
 
           </div>
           <div className="header_search"><button onClick={this.changeLocation.bind(this)}><img src={require('./Images/search.png')} height="20 px" width="20 px"/></button></div>
             <div className="header_location"><p align="center">{this.state.location}</p></div>
       </div>
-        <Conditions temperature={this.state.temperature} condition={this.state.location} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
+        <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
         <Rest/>
           <Compare yHi={this.state.yesterdayHi} yLo={this.state.yesterdayLo} high={this.state.hi} low={this.state.lo}/>
         <Footer Conditions={this.state.condition} Temperature={this.state.temperature} high={this.state.hi} low={this.state.lo} cofr={this.state.rain}/>
@@ -171,17 +173,6 @@ changeLocation=(e)=> {
     document.getElementById("header_dropdown").style.top="0%";
   }
 
-handleShowSnackbar() {
-  this.setState({
-    isSnackbarActive: true
-  });
-}
-
-hideSnackbar() {
-  this.setState({
-    isSnackbarActive: false
-  });
-}
   parseConditions = (parsed_json) => {
     var theLocation = parsed_json['current_observation']['observation_location']['city'];
     var temp = parsed_json['current_observation']['temp_c'];
