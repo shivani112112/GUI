@@ -207,6 +207,14 @@ input {
 
 }
 
+.cloudy {
+	background-image: url("Images/sunglasses.png");
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	height: 40px;
+	background-position: center;
+}
+
 button{
 	all: unset;
 }
