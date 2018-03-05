@@ -101,51 +101,11 @@
 
 }
 
-/* .rest{
-  background-color: blue;
-  min-height: 10%;
-}
-
-.rest_times{
-  background-color: orange;
-
-
-  width:100%;
-  min-height: 10%;
-}
-
-.rest_icons{
-  background-color:hotpink;
-  width:100%;
-  min-height: 50%;
-
-}
-
-table{
-   border:1px;
-     width: 100%;
-    background-color:rgba(0,0,0,0.2);
-    color: yellow;
-
-
-}
-
-
-
-td{
-  background-color: green;
-  width: auto;
-
-  padding:10%;
-
-} */
 
 .rest{
 
 
 }
-
-
 
 
 
@@ -172,14 +132,17 @@ text-align: center;
 }
 
 #header_dropdown{
-    width:100%;
+    width:90%;
     height:0%;
-    background-color:black;
+	left:40px;
+    background-color:rgba(0,0,0,0.2);
     position:absolute;
     top:-40%;
     z-index:1;
     transition: 0.9s;
     display: inline-block;
+	padding-top: 5px;
+	padding-left: 10px;
 }
 
 .footer_take{
@@ -198,4 +161,14 @@ text-align: center;
     background-color:rgba(0,0,0,0.2);
     float:right;
       min-height: 150px;
+}
+
+input {
+	margin-right: 10px;
+	width: 80%;
+	
+}
+
+button{
+	all: unset;
 }
