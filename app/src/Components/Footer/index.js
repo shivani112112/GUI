@@ -40,6 +40,7 @@ class Footer extends Component {
     for (var i = 0; i < 11; i++) {
       trav.push(<tr><td id={this.state.id[i]}>{this.state.travel[i]}</td><td>{this.state.service[i]}</td></tr>);
     }
+				
 
     var takesmall=[];
 	var takebig=[];

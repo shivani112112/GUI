@@ -59,20 +59,6 @@
 
 }
 
-.partlycloudy {
-	background-image: url("Images/cloudy.png");
-	background-size: 40px 40px;
-	background-repeat: no-repeat;
-	height: 40px;
-	background-position: center
-
-}
-.chancerain {
-	background-image: url("http://icons.wxug.com/i/c/k/chancerain.gif");
-	background-size: 40px 40px;
-	background-repeat: no-repeat;
-	height: 40px;
-}
 
 
 .conditions_l_cond{
@@ -171,10 +157,40 @@ table {
 	font-size: 20px;
 	overflow-y: auto;
 }
+
+#bakerloo{
+    background-color: saddlebrown;
+}
 #central{
 	background-color:red;
 }
-
+#circle{
+    background-color: yellow;
+}
+#district{
+    background-color: green;
+}
+#hammersmith-city{
+    background-color: lightpink;
+}
+#jubilee{
+    background-color: grey;
+}
+#metropolitan{
+    background-color: purple;
+}
+#northern{
+    background-color: black;
+}
+#piccadilly{
+    background-color: #003399;
+}
+#victoria{
+    background-color: dodgerblue;
+}
+#waterloo-city{
+    background-color: aquamarine;
+}
 .scroll{
 	height: 80%;
 	max-height: 27vh;

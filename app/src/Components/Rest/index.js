@@ -20,9 +20,11 @@ class Rest extends Component {
 		}
 		var gobz=[];
 		var uz=[];
+		//b,c,e,F
 		for(var i=0; i<7 ;i++){
 			gobz.push(<td>{this.state.hours[i]}</td>);
-			uz.push(<td className={this.state.icons[i]}></td>);
+			var url = "https://icons.wxug.com/i/c/f/"+this.state.icons[i]+".gif";
+			uz.push(<td><img src={url} /></td>);
 		}
 	return (
 		<div className="rest">
