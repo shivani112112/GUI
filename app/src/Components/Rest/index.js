@@ -47,7 +47,7 @@ class Rest extends Component {
 
 		getHourly = () =>{
 			$.ajax({
-				url: "http://api.wunderground.com/api/1671bd6891040bea/hourly/q/UK/London.json",
+				url: "http://api.wunderground.com/api/87f7487f0bc89791/hourly/q/UK/London.json",
 				dataType: "jsonp",
 				success : this.parseHourly,
 				error : function(req, err){ console.log('API call failed ' + err); }

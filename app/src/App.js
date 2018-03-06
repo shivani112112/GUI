@@ -23,8 +23,8 @@ class App extends Component {
       hi:"",
       lo:4,
       feelslike:10,
-      yesterdayHi:20,
-      yesterdayLo:10,
+      yesterdayHi:"",
+      yesterdayLo:"",
       rain:"",
       hours:[],
       icons:[],
@@ -174,7 +174,7 @@ changeLocation=(e)=> {
   }
 
   parseConditions = (parsed_json) => {
-
+  console.log(parsed_json);
 	var obs = parsed_json['current_observation']['observation_location']['city'];
 	var disp = parsed_json['current_observation']['display_location']['city']
 	var theLocation = disp+", "+obs.split(" ")[obs.split(" ").length-1];
@@ -185,17 +185,21 @@ changeLocation=(e)=> {
     this.setState({location: theLocation, temperature: temp, condition: cond, feelslike: fl});
   }
   parseYesterday = (parsed_json) => {
-    // var yHi=4;
-    // var yLo=parsed_json['history']['mintempm'];
+    console.log(parsed_json);
+    var yHi=parsed_json['history']['dailysummary']['maxtempm'];
+    var yLo=parsed_json['history']['dailysummary']['mintempm'];
     //<h1> temp </h1>
-  //  this.setState({yesterdayHi:yHi, yesterdayLo:yLo});
+    console.log(yHi);
+  this.setState({yesterdayHi:yHi, yesterdayLo:yLo});
   }
   parseForecast = (parsed_json) => {
+    console.log(parsed_json);
     var high=parsed_json['forecast']['simpleforecast']['forecastday'][0]['high']['celsius']
     var low=parsed_json['forecast']['simpleforecast']['forecastday'][0]['low']['celsius']
     this.setState({hi:high, lo:low});
   }
   parseRain = (parsed_json) => {
+    console.log(parsed_json);
     var Rain=parsed_json['trip']['chance_of']['chanceofrainday']['percentage']
     this.setState({rain:Rain});
   }

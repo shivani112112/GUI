@@ -6,12 +6,16 @@ class Compare extends Component {
 
 
   render() {
+    console.log("today hi: "+this.props.high);
+    console.log("today low: "+this.props.low);
+    console.log("y Hi: "+this.props.yHi);
+    console.log("y low: "+this.props.yLo);
     var max="yesterday";
     if(this.props.yHi>this.props.high && this.props.yLo> this.props.low){
-      max="warmer than " +max;
+      max="cooler than " +max;
     }
     else if(this.props.yHi<this.props.high && this.props.yLo< this.props.low){
-      max="cooler than "+ max;
+      max="warmer than "+ max;
     }
     else{
       max="same as " + max;
