@@ -159,37 +159,37 @@ table {
 }
 
 #bakerloo{
-    background-color: saddlebrown;
+    background-color: #996633;
 }
 #central{
-	background-color:red;
+	background-color:#CC0033;
 }
 #circle{
-    background-color: yellow;
+    background-color: #ffcc00;
 }
 #district{
-    background-color: green;
+    background-color: #006633;
 }
 #hammersmith-city{
-    background-color: lightpink;
+    background-color: #FF99CC;
 }
 #jubilee{
-    background-color: grey;
+    background-color: #666666;
 }
 #metropolitan{
-    background-color: purple;
+    background-color: #990033;
 }
 #northern{
-    background-color: black;
+    background-color: #000000;
 }
 #piccadilly{
     background-color: #003399;
 }
 #victoria{
-    background-color: dodgerblue;
+    background-color: #3399CC;
 }
 #waterloo-city{
-    background-color: aquamarine;
+    background-color: #66CCCC;
 }
 .scroll{
 	height: 80%;
