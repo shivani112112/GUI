@@ -107,12 +107,10 @@ document.getElementById("header_dropdown").style.top="-40%";
 }
 
   render() {
-   //   if(this.state.flag){
     this.hello()
-   //     this.getLocation()
-   //     this.state.flag=false
-   // }
-
+    var d= new Date();
+    var n= d.getHours()
+    
     return (
       <div className="App">
 
