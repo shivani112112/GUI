@@ -26,7 +26,6 @@ class Footer extends Component {
     var ids=[];
     var names =[];
     var services = [];
-    console.log(parsed_json);
     for(var i=0; i<11; i++ ){
      ids[i]=parsed_json[i]['id'];
      names[i]= parsed_json[i]['name'];
@@ -98,22 +97,18 @@ class Footer extends Component {
     );
   }
   showWhatToTake =(e) =>{
-      console.log("Hello")
       document.getElementById("theTake").style.left="0%"
   }
   showTravel= (e) =>{
-      console.log(this.state.travel)
       this.getTravelInfo()
       document.getElementById("theTravel").style.left="0%"
   }
 
   closeTake= (e) =>{
-      console.log("Bye")
       document.getElementById("theTake").style.left="-100%"
   }
 
   closeTravel= (e) =>{
-      console.log("Bye")
       document.getElementById("theTravel").style.left="-100%"
   }
 

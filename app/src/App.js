@@ -21,29 +21,20 @@ class App extends Component {
       temperature: "",
       condition:"",
       hi:"",
-      lo:4,
-      feelslike:10,
+      lo:"",
+      feelslike:"",
       yesterdayHi:"",
       yesterdayLo:"",
       rain:"",
       hours:[],
       icons:[],
-      isSnackbarActive: true,
       search1:""
     };
     this.setLocation.bind(this)
   }
   getLocation = () =>{
-    //var long = this.state.locationLong;
-    //var long = this.state.locationLong;
-      //console.log(this.state.locationLat
-      console.log(document.getElementById('search').value);
-        if(this.state.search1=="") console.log("gobi is moist");
-
-
-      if(this.state.search1!=""){
+    if(this.state.search1!=""){
   	   var url="http://api.wunderground.com/api/87f7487f0bc89791/conditions/q/UK/"+this.state.search1+".json"
-      console.log(url)
     $.ajax({
       url: url,
       dataType: "jsonp",
@@ -72,7 +63,6 @@ class App extends Component {
   	}
   	else{
   		var url="http://api.wunderground.com/api/87f7487f0bc89791/conditions/q/"+this.state.locationLat+","+this.state.locationLong+".json"
-      console.log(url)
     $.ajax({
       url: url,
       dataType: "jsonp",
@@ -106,7 +96,6 @@ setLocation = () => {
   temp.replace(" ","_");
   this.setState({search1: temp}
 ,() => {
-  console.log(this.state.search1);
   this.getLocation();
 });
 
@@ -155,7 +144,6 @@ document.getElementById("header_dropdown").style.top="-40%";
     ,() => {
       if(this.state.flag){
         var temp=this.state.locationLat+","+this.state.locationLong;
-        console.log(this.state.search)
         this.getLocation()
         this.state.flag=false
     }
@@ -174,7 +162,6 @@ changeLocation=(e)=> {
   }
 
   parseConditions = (parsed_json) => {
-  console.log(parsed_json);
 	var obs = parsed_json['current_observation']['observation_location']['city'];
 	var disp = parsed_json['current_observation']['display_location']['city']
 	var theLocation = disp+", "+obs.split(" ")[obs.split(" ").length-1];
@@ -185,21 +172,17 @@ changeLocation=(e)=> {
     this.setState({location: theLocation, temperature: temp, condition: cond, feelslike: fl});
   }
   parseYesterday = (parsed_json) => {
-    console.log(parsed_json);
-    var yHi=parsed_json['history']['dailysummary']['maxtempm'];
-    var yLo=parsed_json['history']['dailysummary']['mintempm'];
+    var yHi=parsed_json['history']['dailysummary'][0]['maxtempm'];
+    var yLo=parsed_json['history']['dailysummary'][0]['mintempm'];
     //<h1> temp </h1>
-    console.log(yHi);
   this.setState({yesterdayHi:yHi, yesterdayLo:yLo});
   }
   parseForecast = (parsed_json) => {
-    console.log(parsed_json);
     var high=parsed_json['forecast']['simpleforecast']['forecastday'][0]['high']['celsius']
     var low=parsed_json['forecast']['simpleforecast']['forecastday'][0]['low']['celsius']
     this.setState({hi:high, lo:low});
   }
   parseRain = (parsed_json) => {
-    console.log(parsed_json);
     var Rain=parsed_json['trip']['chance_of']['chanceofrainday']['percentage']
     this.setState({rain:Rain});
   }

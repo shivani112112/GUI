@@ -24,7 +24,6 @@ class Rest extends Component {
 			gobz.push(<td>{this.state.hours[i]}</td>);
 			uz.push(<td className={this.state.icons[i]}></td>);
 		}
-		console.log(this.state.icons);
 	return (
 		<div className="rest">
 			<table>
@@ -38,12 +37,6 @@ class Rest extends Component {
 		</div>
 	);
 }
-		test = () => {
-			console.log(this.props.Hour[1])
-			console.log(this.props.Icon[1])
-		}
-
-
 
 		getHourly = () =>{
 			$.ajax({
