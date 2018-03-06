@@ -171,10 +171,40 @@ table {
 	font-size: 20px;
 	overflow-y: auto;
 }
+
+#bakerloo{
+    background-color: saddlebrown;
+}
 #central{
 	background-color:red;
 }
-
+#circle{
+    background-color: yellow;
+}
+#district{
+    background-color: green;
+}
+#hammersmith-city{
+    background-color: lightpink;
+}
+#jubilee{
+    background-color: grey;
+}
+#metropolitan{
+    background-color: purple;
+}
+#northern{
+    background-color: black;
+}
+#piccadilly{
+    background-color: blue;
+}
+#victoria{
+    background-color: dodgerblue;
+}
+#waterloo-city{
+    background-color: aquamarine;
+}
 .scroll{
 	height: 80%;
 	max-height: 27vh;
