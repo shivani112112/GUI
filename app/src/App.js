@@ -174,7 +174,7 @@ changeLocation=(e)=> {
   }
 
   parseConditions = (parsed_json) => {
-    
+
 	var obs = parsed_json['current_observation']['observation_location']['city'];
 	var disp = parsed_json['current_observation']['display_location']['city']
 	var theLocation = disp+", "+obs.split(" ")[obs.split(" ").length-1];

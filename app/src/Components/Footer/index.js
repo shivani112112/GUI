@@ -3,8 +3,42 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
 class Footer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      travel: [],
+      service:[]
+    };
+  }
 
+  getTravelInfo = ()=>{
+    var url="https://api.tfl.gov.uk/Line/Mode/tube/Status?app_id=042a9bf8&app_key=9d8934a0357c9a355812182231507ae0"
+    $.ajax({
+      url: url,
+      dataType: "json",
+      success : this.parseTravelInfo,
+      error : function(req, err){ console.log('API call failed ' + err); }
+    })
+  }
+
+  parseTravelInfo = (parsed_json) =>{
+    var names =[];
+    var services = [];
+    console.log(parsed_json);
+    for(var i=0; i<11; i++ ){
+     names[i]= parsed_json[i]['name'];
+     services[i]=parsed_json[i]['lineStatuses'][0]['statusSeverityDescription'];
+
+
+    }
+    this.setState({travel:names, service: services});
+  }
   render() {
+    var trav=[];
+    for (var i = 0; i < 11; i++) {
+      trav.push(<tr><td>{this.state.travel[i]}</td><td>{this.state.service[i]}</td></tr>);
+    }
+
     var takesmall=[];
 	var takebig=[];
     if(this.props.Conditions == "rain"){
@@ -28,6 +62,11 @@ class Footer extends Component {
     if(this.props.Conditions == "sunny" ){
         takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);
     }
+
+      //  <button onClick={this.closeTravel.bind(this)}>
+      //  </button>
+
+
     return (
       <div className="footer">
 
@@ -41,9 +80,15 @@ class Footer extends Component {
 				</table>
 		  </button ></div>
 
-          <div id="theTravel"><button onClick={this.closeTravel.bind(this)}>
-			  <h2>Travel</h2>
-		  </button></div>
+          <div id="theTravel"> <button onClick={this.closeTravel.bind(this)}>
+			         <h2>
+                Travel
+              </h2>
+              <table>
+                {trav}
+              </table>
+
+           </button></div>
       </div>
 
 
@@ -54,7 +99,8 @@ class Footer extends Component {
       document.getElementById("theTake").style.left="0%"
   }
   showTravel= (e) =>{
-      console.log("Bye")
+      console.log(this.state.travel)
+      this.getTravelInfo()
       document.getElementById("theTravel").style.left="0%"
   }
 
