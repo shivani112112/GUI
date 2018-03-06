@@ -7,7 +7,8 @@ class Footer extends Component {
     super(props);
     this.state = {
       travel: [],
-      service:[]
+      service:[],
+      id:[]
     };
   }
 
@@ -22,21 +23,23 @@ class Footer extends Component {
   }
 
   parseTravelInfo = (parsed_json) =>{
+    var ids=[];
     var names =[];
     var services = [];
     console.log(parsed_json);
     for(var i=0; i<11; i++ ){
+     ids[i]=parsed_json[i]['id'];
      names[i]= parsed_json[i]['name'];
      services[i]=parsed_json[i]['lineStatuses'][0]['statusSeverityDescription'];
 
 
     }
-    this.setState({travel:names, service: services});
+    this.setState({travel:names, service: services, id:ids});
   }
   render() {
     var trav=[];
     for (var i = 0; i < 11; i++) {
-      trav.push(<tr><td>{this.state.travel[i]}</td><td>{this.state.service[i]}</td></tr>);
+      trav.push(<tr><td id={this.state.id[i]}>{this.state.travel[i]}</td><td>{this.state.service[i]}</td></tr>);
     }
 
     var takesmall=[];
@@ -83,10 +86,10 @@ class Footer extends Component {
           <div id="theTravel"> <button onClick={this.closeTravel.bind(this)}>
 			         <h2>
                 Travel
-              </h2>
+              </h2><div className="scroll">
               <table>
                 {trav}
-              </table>
+              </table></div>
 
            </button></div>
       </div>

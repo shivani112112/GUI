@@ -161,12 +161,25 @@ table {
 	top:57.5vh;
 	height:300%;
 	width:100%;
+	max-height: 42.5vh;
 	position:absolute;
 	background-color:rgba(0,0,0,0.7);
 	left:-100%;
 	z-index:1;
 	transition: 0.9s;
 	display: inline-block;
+	font-size: 20px;
+	overflow-y: auto;
+}
+#central{
+	background-color:red;
+}
+
+.scroll{
+	height: 80%;
+	max-height: 27vh;
+	overflow-y: auto;
+	width: 100%;
 }
 
 .closebutton{
