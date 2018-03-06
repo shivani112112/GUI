@@ -42,7 +42,7 @@ class App extends Component {
 
 
       if(this.state.search1!=""){
-  	   var url="http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/UK/"+this.state.search1+".json"
+  	   var url="http://api.wunderground.com/api/87f7487f0bc89791/conditions/q/UK/"+this.state.search1+".json"
       console.log(url)
     $.ajax({
       url: url,
@@ -51,27 +51,27 @@ class App extends Component {
       error : function(req, err){ console.log('API call failed ' + err); }
     })
     $.ajax({
-      url: "http://api.wunderground.com/api/61fa425d356c6fd4/yesterday/q/UK/"+this.state.search1+".json",
+      url: "http://api.wunderground.com/api/87f7487f0bc89791/yesterday/q/UK/"+this.state.search1+".json",
       dataType: "jsonp",
       success : this.parseYesterday,
       error : function(req, err){ console.log('API call failed ' + err); }
     })
 
     $.ajax({
-      url: "http://api.wunderground.com/api/61fa425d356c6fd4/forecast10day/q/UK/"+this.state.search1+".json",
+      url: "http://api.wunderground.com/api/87f7487f0bc89791/forecast10day/q/UK/"+this.state.search1+".json",
       dataType: "jsonp",
       success : this.parseForecast,
       error : function(req, err){ console.log('API call failed ' + err); }
     })
     $.ajax({
-      url: "http://api.wunderground.com/api/61fa425d356c6fd4/planner_07010731/q/UK/"+this.state.search1+".json",
+      url: "http://api.wunderground.com/api/87f7487f0bc89791/planner_07010731/q/UK/"+this.state.search1+".json",
       dataType: "jsonp",
       success : this.parseRain,
       error : function(req, err){ console.log('API call failed ' + err); }
     })
   	}
   	else{
-  		var url="http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/"+this.state.locationLat+","+this.state.locationLong+".json"
+  		var url="http://api.wunderground.com/api/87f7487f0bc89791/conditions/q/"+this.state.locationLat+","+this.state.locationLong+".json"
       console.log(url)
     $.ajax({
       url: url,
@@ -80,20 +80,20 @@ class App extends Component {
       error : function(req, err){ console.log('API call failed ' + err); }
     })
     $.ajax({
-      url: "http://api.wunderground.com/api/61fa425d356c6fd4/yesterday/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+      url: "http://api.wunderground.com/api/87f7487f0bc89791/yesterday/q/"+this.state.locationLat+","+this.state.locationLong+".json",
       dataType: "jsonp",
       success : this.parseYesterday,
       error : function(req, err){ console.log('API call failed ' + err); }
     })
 
     $.ajax({
-      url: "http://api.wunderground.com/api/61fa425d356c6fd4/forecast10day/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+      url: "http://api.wunderground.com/api/87f7487f0bc89791/forecast10day/q/"+this.state.locationLat+","+this.state.locationLong+".json",
       dataType: "jsonp",
       success : this.parseForecast,
       error : function(req, err){ console.log('API call failed ' + err); }
     })
     $.ajax({
-      url: "http://api.wunderground.com/api/61fa425d356c6fd4/planner_07010731/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+      url: "http://api.wunderground.com/api/87f7487f0bc89791/planner_07010731/q/"+this.state.locationLat+","+this.state.locationLong+".json",
       dataType: "jsonp",
       success : this.parseRain,
       error : function(req, err){ console.log('API call failed ' + err); }
