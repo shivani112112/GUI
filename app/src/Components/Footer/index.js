@@ -46,24 +46,29 @@ class Footer extends Component {
 	var takebig=[];
     if(this.props.Conditions == "rain"){
         takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
-  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>"It is currently raining so don't forget your umbrella!"</td></tr>);
+  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>"It is currently raining so don't forget to take your umbrella!"</td></tr>);
   }
 	else if(this.props.cofr>50){
 		takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
-		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>The chance of rain for today is {this.props.cofr}% today so dont forget your umbrella!</td></tr>);
+		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>The chance of rain for today is {this.props.cofr}% so dont forget to take your umbrella!</td></tr>);
 	}
     if(this.props.Temperature<14 || this.props.low<10){
       takesmall.push(<img src={require('../../Images/jacket.png')} height="40px" width="40px"/>);
+    takebig.push(<tr><td><img src={require('../../Images/jacket.png')} height="40px" width="40px"/></td><td>It's chilly outside, and the low for today will be {this.props.low}° so don't forget to take your jacket!</td></tr>);
       if(this.props.Temperature<8 || this.props.low<4){
         takesmall.push(<img src={require('../../Images/hat.png')} height="40px" width="40px"/>);
+        takebig.push(<tr><td><img src={require('../../Images/hat.png')} height="40px" width="40px"/></td><td>It's cold outside so don't forget to take your hat!</td></tr>); 
         takesmall.push(<img src={require('../../Images/scarf.png')} height="40px" width="40px"/>);
+        takebig.push(<tr><td><img src={require('../../Images/scarf.png')} height="40px" width="40px"/></td><td>It's cold outside so don't forget to take your scarf!</td></tr>);
       }
     }
     else if(this.props.Temperature>20 || this.props.high>25){
       takesmall.push(<img src={require('../../Images/suncream.png')} height="40px" width="40px"/>);
+    takebig.push(<tr><td><img src={require('../../Images/suncream.png')} height="40px" width="40px"/></td><td>It's warm outside, so don't forget to take your suncream!</td></tr>);
     }
     if(this.props.Conditions == "sunny" ){
         takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);
+        takebig.push(<tr><td><img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/></td><td>It's sunny outside, so don't forget to take your sunglasses!</td></tr>);
     }
 
       //  <button onClick={this.closeTravel.bind(this)}>
