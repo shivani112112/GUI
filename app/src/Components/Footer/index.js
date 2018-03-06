@@ -63,7 +63,7 @@ class Footer extends Component {
       takesmall.push(<img src={require('../../Images/suncream.png')} height="40px" width="40px"/>);
     }
     if(this.props.Conditions == "sunny" ){
-        takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);
+        takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>); 
     }
 
       //  <button onClick={this.closeTravel.bind(this)}>
