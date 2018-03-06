@@ -23,7 +23,7 @@ class Rest extends Component {
 		//b,c,e,F
 		for(var i=0; i<7 ;i++){
 			gobz.push(<td>{this.state.hours[i]}</td>);
-			var url = "https://icons.wxug.com/i/c/f/"+this.state.icons[i]+".gif";
+			var url = "https://icons.wxug.com/i/c/i/"+this.state.icons[i]+".gif";
 			uz.push(<td><img src={url} /></td>);
 		}
 		console.log(this.state.icons);
