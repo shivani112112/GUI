@@ -59,20 +59,6 @@
 
 }
 
-.partlycloudy {
-	background-image: url("Images/cloudy.png");
-	background-size: 40px 40px;
-	background-repeat: no-repeat;
-	height: 40px;
-	background-position: center
-
-}
-.chancerain {
-	background-image: url("http://icons.wxug.com/i/c/k/chancerain.gif");
-	background-size: 40px 40px;
-	background-repeat: no-repeat;
-	height: 40px;
-}
 
 
 .conditions_l_cond{
