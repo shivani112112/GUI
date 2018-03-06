@@ -40,17 +40,17 @@ class Footer extends Component {
     for (var i = 0; i < 11; i++) {
       trav.push(<tr><td id={this.state.id[i]}>{this.state.travel[i]}</td><td>{this.state.service[i]}</td></tr>);
     }
-				
+
 
     var takesmall=[];
 	var takebig=[];
     if(this.props.Conditions == "rain"){
         takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
-<<<<<<< HEAD
+
   		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>"It is currently raining so don't forget to take your umbrella!"</td></tr>);
-=======
-  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>It is currently raining so don't forget your umbrella!</td></tr>);
->>>>>>> 470f19f1eed71ac2000e16feb9e6f3c28824cc9a
+
+  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>"It is currently raining so don't forget your umbrella!"</td></tr>);
+
   }
 	else if(this.props.cofr>50){
 		takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
@@ -61,7 +61,7 @@ class Footer extends Component {
     takebig.push(<tr><td><img src={require('../../Images/jacket.png')} height="40px" width="40px"/></td><td>It's chilly outside, and the low for today will be {this.props.low}° so don't forget to take your jacket!</td></tr>);
       if(this.props.Temperature<8 || this.props.low<4){
         takesmall.push(<img src={require('../../Images/hat.png')} height="40px" width="40px"/>);
-        takebig.push(<tr><td><img src={require('../../Images/hat.png')} height="40px" width="40px"/></td><td>It's cold outside so don't forget to take your hat!</td></tr>); 
+        takebig.push(<tr><td><img src={require('../../Images/hat.png')} height="40px" width="40px"/></td><td>It's cold outside so don't forget to take your hat!</td></tr>);
         takesmall.push(<img src={require('../../Images/scarf.png')} height="40px" width="40px"/>);
         takebig.push(<tr><td><img src={require('../../Images/scarf.png')} height="40px" width="40px"/></td><td>It's cold outside so don't forget to take your scarf!</td></tr>);
       }
@@ -71,12 +71,12 @@ class Footer extends Component {
     takebig.push(<tr><td><img src={require('../../Images/suncream.png')} height="40px" width="40px"/></td><td>It's warm outside, so don't forget to take your suncream!</td></tr>);
     }
     if(this.props.Conditions == "sunny" ){
-<<<<<<< HEAD
+
         takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);
         takebig.push(<tr><td><img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/></td><td>It's sunny outside, so don't forget to take your sunglasses!</td></tr>);
-=======
-        takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);   
->>>>>>> 470f19f1eed71ac2000e16feb9e6f3c28824cc9a
+
+        takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);
+
     }
 
       //  <button onClick={this.closeTravel.bind(this)}>
