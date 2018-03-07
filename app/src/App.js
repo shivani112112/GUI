@@ -132,7 +132,7 @@ document.getElementById("header_dropdown").style.top="-40%";
           </div>
           <div className="header_search"><button onClick={this.changeLocation.bind(this)}><img src={require('./Images/search.png')} height="20 px" width="20 px"/></button></div>
             <div className="header_location"><p align="center">{this.state.location}</p></div>
-          <div><button onClick={this.share.bind(this)}>Share</button></div>
+          /*<div><button onClick={this.share.bind(this)}>Share</button></div>*/
       </div>
         <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
         <Rest/>
