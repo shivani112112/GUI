@@ -129,6 +129,7 @@ document.getElementById("header_dropdown").style.top="-40%";
           </div>
           <div className="header_search"><button onClick={this.changeLocation.bind(this)}><img src={require('./Images/search.png')} height="20 px" width="20 px"/></button></div>
             <div className="header_location"><p align="center">{this.state.location}</p></div>
+          <div><button onClick={this.share.bind(this)}>Share</button></div>
       </div>
         <Conditions temperature={this.state.temperature} condition={this.state.condition} feelslike={this.state.feelslike} hi={this.state.hi} lo={this.state.lo}/>
         <Rest/>
@@ -165,6 +166,10 @@ changeLocation=(e)=> {
     document.getElementById("header_dropdown").style.top="0%";
   }
 
+  share = (e)=>{
+
+  }
+
   parseConditions = (parsed_json) => {
 	var obs = parsed_json['current_observation']['observation_location']['city'];
 	var disp = parsed_json['current_observation']['display_location']['city']
@@ -177,7 +182,6 @@ changeLocation=(e)=> {
   parseYesterday = (parsed_json) => {
     var yHi=parsed_json['history']['dailysummary'][0]['maxtempm'];
     var yLo=parsed_json['history']['dailysummary'][0]['mintempm'];
-    //<h1> temp </h1>
   this.setState({yesterdayHi:yHi, yesterdayLo:yLo});
   }
   parseForecast = (parsed_json) => {
@@ -199,9 +203,13 @@ changeLocation=(e)=> {
     let url2= require("./Images/day.jpg")
     if(n>sunSet || n<sunRise){
       document.getElementById("App").style.background='url(' + url + ')';
+      document.getElementById("App").style.backgroundRepeat= "no-repeat";
+    	document.getElementById("App").style.backgroundSize="cover";
     }
     else{
       document.getElementById("App").style.background='url(' + url2 + ')';
+      document.getElementById("App").style.backgroundRepeat= "no-repeat";
+    	document.getElementById("App").style.backgroundSize="cover";
     }
   }
 
