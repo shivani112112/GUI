@@ -90,10 +90,12 @@ class Footer extends Component {
       		<button className="footer_travel" onClick={this.showTravel.bind(this)}><div><h3>Travel</h3></div></button>
 
           <div id="theTake"><button onClick={this.closeTake.bind(this)}>
+          <div className="hello">
 			  	<h2>What to take</h2>
 				<table>
 					{takebig}
 				</table>
+        </div>
 		  </button ></div>
 
           <div id="theTravel"> <button onClick={this.closeTravel.bind(this)}>
