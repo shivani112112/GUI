@@ -28,7 +28,7 @@ class App extends Component {
       rain:"",
       hours:[],
       icons:[],
-      search1:""
+      search1:"",
     };
     this.setLocation.bind(this)
   }
@@ -60,6 +60,12 @@ class App extends Component {
       success : this.parseRain,
       error : function(req, err){ console.log('API call failed ' + err); }
     })
+    $.ajax({
+      url: "http://api.wunderground.com/api/87f7487f0bc89791/astronomy/q/UK/"+this.state.search1+".json",
+      dataType: "jsonp",
+      success : this.parseSun,
+      error : function(req, err){ console.log('API call failed ' + err); }
+    })
   	}
   	else{
   		var url="http://api.wunderground.com/api/87f7487f0bc89791/conditions/q/"+this.state.locationLat+","+this.state.locationLong+".json"
@@ -88,6 +94,12 @@ class App extends Component {
       success : this.parseRain,
       error : function(req, err){ console.log('API call failed ' + err); }
     })
+    $.ajax({
+      url: "http://api.wunderground.com/api/87f7487f0bc89791/astronomy/q/"+this.state.locationLat+","+this.state.locationLong+".json",
+      dataType: "jsonp",
+      success : this.parseSun,
+      error : function(req, err){ console.log('API call failed ' + err); }
+    })
   	}
 }
 
@@ -102,18 +114,12 @@ setLocation = () => {
 document.getElementById("header_dropdown").style.height="0%";
 document.getElementById("header_dropdown").style.top="-40%";
   this.render();
-
-
 }
 
   render() {
     this.hello()
-    var d= new Date();
-    var n= d.getHours()
-    
     return (
-      <div className="App">
-
+      <div id="App">
       <div className="header">
           <div id="header_dropdown">
 
@@ -166,7 +172,6 @@ changeLocation=(e)=> {
     var temp = parsed_json['current_observation']['temp_c'];
     var cond = parsed_json['current_observation']['weather'];
     var fl= parsed_json['current_observation']['feelslike_c'];
-    //<h1> temp </h1>
     this.setState({location: theLocation, temperature: temp, condition: cond, feelslike: fl});
   }
   parseYesterday = (parsed_json) => {
@@ -183,6 +188,21 @@ changeLocation=(e)=> {
   parseRain = (parsed_json) => {
     var Rain=parsed_json['trip']['chance_of']['chanceofrainday']['percentage']
     this.setState({rain:Rain});
+  }
+  parseSun = (parsed_json) =>{
+    console.log(parsed_json);
+    var sunRise=parsed_json['sun_phase']['sunrise']['hour']
+    var sunSet=parsed_json['sun_phase']['sunset']['hour']
+    var d= new Date();
+    var n= d.getHours();
+    let url= require("./Images/night.jpg")
+    let url2= require("./Images/day.jpg")
+    if(n>sunSet || n<sunRise){
+      document.getElementById("App").style.background='url(' + url + ')';
+    }
+    else{
+      document.getElementById("App").style.background='url(' + url2 + ')';
+    }
   }
 
 }
