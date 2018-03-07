@@ -9,6 +9,9 @@ import Footer from './Components/Footer'
 import Api from './Components/Api';
 import $ from 'jquery';
 import { Snackbar } from 'react';
+import {
+  FacebookShareButton,
+} from 'react-share';
 
 class App extends Component {
   constructor(props) {
@@ -167,7 +170,8 @@ changeLocation=(e)=> {
   }
 
   share = (e)=>{
-
+    console.log("Shared");
+    window.location.assign("https://www.facebook.com")
   }
 
   parseConditions = (parsed_json) => {
