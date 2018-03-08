@@ -120,8 +120,10 @@ table {
 	z-index:1;
 	transition: 0.9s;
 	display: inline-block;
-	padding-top: 5px;
-	padding-left: 12px;
+	padding-top: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 3px;
 }
 
 .header_search{
@@ -146,7 +148,7 @@ table {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 8px 1px;
+    margin: 8px 2px;
 
 
 
