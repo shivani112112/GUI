@@ -145,7 +145,6 @@ class App extends Component {
 			rain: planner.trip.chance_of.chanceofrainday.percentage,
 			sunrise: astronomy.sun_phase.sunrise.hour,
 			sunset: astronomy.sun_phase.sunset.hour
-
 		});
 
 
@@ -187,12 +186,16 @@ class App extends Component {
 				feelslike={this.state.feelslike}
 				hi={this.state.hi}
 				lo={this.state.lo}
+        sunrise={this.state.sunrise}
+        sunset={this.state.sunset}
 			/>
 
 
 			<Rest
 				hours={this.state.hours}
 				icons={this.state.icons}
+        sunrise={this.state.sunrise}
+        sunset={this.state.sunset}
 			/>
 
 
