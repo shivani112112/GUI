@@ -26,7 +26,12 @@ class App extends Component {
 		hours: undefined,
 		icons: undefined,
 		sunrise: undefined,
-		sunset: undefined
+		sunset: undefined,
+    travel: undefined,
+    service: undefined,
+    id: undefined,
+    changed:undefined,
+    severe:undefined
 	}
 
 	componentWillMount = async() => {
@@ -40,7 +45,7 @@ class App extends Component {
 
 
 	searchdown=(e)=> {
-		document.getElementById("header_dropdown").style.height="5%";
+		document.getElementById("header_dropdown").style.height="10%";
 		document.getElementById("header_dropdown").style.top="0%";
     }
 
@@ -91,10 +96,10 @@ class App extends Component {
 		const planner = await apicall.json();
 		console.log(planner);
 
-
 		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/hourly/q/'+loc+'.json');
 		const hourly = await apicall.json();
 		console.log(hourly);
+
 		var hour=[];
 		var icon=[];
 			for (var i = 0; i < 7; i++) {
@@ -128,8 +133,19 @@ class App extends Component {
     	document.getElementById("App").style.backgroundSize="cover";
     }
 
+    apicall = await fetch('https://api.tfl.gov.uk/Line/Mode/tube/Status?app_id=042a9bf8&app_key=9d8934a0357c9a355812182231507ae0');
+		const travel = await apicall.json();
+		console.log(travel);
 
-
+    var ids=[];
+    var names =[];
+    var services = [];
+    for(var i=0; i<11; i++ ){
+     ids[i]=travel[i].id;
+     console.log(ids[i])
+     names[i]= travel[i].name;
+     services[i]=travel[i].lineStatuses[0].statusSeverityDescription;
+    }
 		this.setState({
 			location: conds.current_observation.display_location.city,
 			temperature: conds.current_observation.temp_c,
@@ -143,8 +159,12 @@ class App extends Component {
 			icons: icon,
 			rain: planner.trip.chance_of.chanceofrainday.percentage,
 			sunrise: astronomy.sun_phase.sunrise.hour,
-			sunset: astronomy.sun_phase.sunset.hour
-
+			sunset: astronomy.sun_phase.sunset.hour,
+      travel:names,
+      service:services,
+      id:ids,
+      changed:false,
+      severe:false
 		});
 
 
@@ -172,11 +192,6 @@ class App extends Component {
 				</div>
 				<div className="header_location">
 					<p align="center">{this.state.location}</p>
-				</div>
-        <div className="header_share">
-					<button onClick={this.searchdown}>
-						<img src={require('./Images/share.png')} height="20 px" width="20 px"/>
-					</button>
 				</div>
 			</div>
 
@@ -208,7 +223,13 @@ class App extends Component {
 				Temperature={this.state.temperature}
 				high={this.state.hi}
 				low={this.state.lo}
-				cofr={this.state.rain}/>
+				cofr={this.state.rain}
+        travel={this.state.travel}
+        service={this.state.service}
+        id={this.state.id}
+        changed={this.state.changed}
+        severe={this.state.severe}
+        />
 		</div>
 
 		);
