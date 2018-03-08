@@ -109,11 +109,12 @@ class App extends Component {
 		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/astronomy/q/'+loc+'.json');
 		const astronomy = await apicall.json();
 		console.log(astronomy);
-		var sunr: astronomy.sun_phase.sunrise.hour;
-		var suns: astronomy.sun_phase.sunset.hour;
+		var sunr= astronomy.sun_phase.sunrise.hour;
+		var suns= astronomy.sun_phase.sunset.hour;
+    console.log(suns);
 		var n = new Date().getHours();
 		let url= require("./Images/night.jpg")
-    	let url2= require("./Images/day.jpg")
+    let url2= require("./Images/day.jpg")
 		console.log(n+" hours");
 
 
