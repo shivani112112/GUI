@@ -15,7 +15,8 @@
 }
 
 .header_search{
-	
+
+
 }
 
 .header_location{
@@ -55,7 +56,6 @@
 .conditions_l_emoji{
 	height:150 px;
 	width:150 px;
-
 }
 
 
@@ -117,7 +117,7 @@ table {
 }
 
 #header_dropdown{
-	width:90%;
+	width:86%;
 	height:0%;
 	left:40px;
 	background-color:rgba(0,0,0,0.2);
@@ -127,9 +127,10 @@ table {
 	transition: 0.9s;
 	display: inline-block;
 	padding-top: 5px;
-	padding-left: 10px;
+	padding-left: 12px;
 }
 
+<<<<<<< HEAD
 
 #theTake{
 	top:57.5vh;
@@ -146,6 +147,9 @@ table {
 	overflow-y: auto;
 }
 #theTravel{
+=======
+#theTravel,#theTake{
+>>>>>>> 6d6951f0f149bbbebbc597593dea84e8f738ec6a
 	top:57.5vh;
 	height:300%;
 	width:100%;
@@ -163,36 +167,47 @@ table {
 #bakerloo{
     background-color: #996633;
 }
+
 #central{
 	background-color:red;
 }
+
 #circle{
     background-color: #ffcc00;
 }
+
 #district{
     background-color: #006633;
 }
+
 #hammersmith-city{
     background-color: #FF99CC;
 }
+
 #jubilee{
     background-color: #666666;
 }
+
 #metropolitan{
     background-color: #990033;
 }
+
 #northern{
     background-color: #000000;
 }
+
 #piccadilly{
     background-color: #003399;
 }
+
 #victoria{
     background-color: #3399CC;
 }
+
 #waterloo-city{
     background-color: #66CCCC;
 }
+
 .scroll{
 	height: 80%;
 	max-height: 27vh;

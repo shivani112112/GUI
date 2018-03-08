@@ -30,22 +30,22 @@ class App extends Component {
 	}
 
 	componentWillMount = async() => {
-		
+
 		await navigator.geolocation.getCurrentPosition(this.success, this.error);
-		
+
 //		this.getWeather();
 	}
-	
-	
+
+
 
 
 	searchdown=(e)=> {
-		document.getElementById("header_dropdown").style.height="10%";
+		document.getElementById("header_dropdown").style.height="5%";
 		document.getElementById("header_dropdown").style.top="0%";
     }
-	
 
-	
+
+
 	success = async (pos) =>{
 		console.log(pos);
 		var lat = await pos.coords.latitude;
@@ -55,42 +55,43 @@ class App extends Component {
 		console.log(loc);
 		this.getWeather();
 	}
-	
+
 	callSearch =(e) => {
-			
+
 		if(e) e.preventDefault();
-		
+
 			var city = e.target.elements.city.value;
 			var country = e.target.elements.country.value;
 			console.log(city+" "+country);
 			if (country=="" && city!="") loc = "UK/"+city;
 			else if (country!="" && city!="") loc = country+"/"+city;
-		
+			else loc=latlon;
+
 		this.getWeather();
 		document.getElementById("header_dropdown").style.height="0%";
 		document.getElementById("header_dropdown").style.top="-40%";
 	}
-	
-	getWeather = async () =>{	
-		
-		
+
+	getWeather = async () =>{
+
+
 		var apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/conditions/q/'+loc+'.json');
 		const conds = await apicall.json();
 		console.log(conds);
-		
+
 		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/yesterday/q/'+loc+'.json');
 		const yest = await apicall.json();
 		console.log(yest);
-		
+
 		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/forecast10day/q/'+loc+'.json');
 		const tenday = await apicall.json();
 		console.log(tenday);
-		
+
 		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/planner_07010731/q/'+loc+'.json');
 		const planner = await apicall.json();
 		console.log(planner);
-		
-		
+
+
 		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/hourly/q/'+loc+'.json');
 		const hourly = await apicall.json();
 		console.log(hourly);
@@ -103,8 +104,8 @@ class App extends Component {
 				hour[i]=temp1[0]+" "+temp[1];
 				icon[i]=hourly.hourly_forecast[i].condition;
 			}
-		
-		
+
+
 		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/astronomy/q/'+loc+'.json');
 		const astronomy = await apicall.json();
 		console.log(astronomy);
@@ -112,10 +113,10 @@ class App extends Component {
 		var suns: astronomy.sun_phase.sunset.hour;
 		var n = new Date().getHours();
 		let url= require("./Images/night.jpg")
-    	let url2= require("./Images/day.jpg")
+    let url2= require("./Images/day.jpg")
 		console.log(n+" hours");
-		
-		
+
+
 		if(n>suns || n<sunr){
       document.getElementById("App").style.background='url(' + url + ')';
       document.getElementById("App").style.backgroundRepeat= "no-repeat";
@@ -126,9 +127,9 @@ class App extends Component {
       document.getElementById("App").style.backgroundRepeat= "no-repeat";
     	document.getElementById("App").style.backgroundSize="cover";
     }
-		
-		
-		
+
+
+
 		this.setState({
 			location: conds.current_observation.display_location.city,
 			temperature: conds.current_observation.temp_c,
@@ -143,20 +144,20 @@ class App extends Component {
 			rain: planner.trip.chance_of.chanceofrainday.percentage,
 			sunrise: astronomy.sun_phase.sunrise.hour,
 			sunset: astronomy.sun_phase.sunset.hour
-			
+
 		});
-		
-		
+
+
 	}
 
 	render(){
-		
-		
+
+
 		this.getWeather
-		
+
 		return(
 		<div id="App">
-			<div className="header">	
+			<div className="header">
 				<div id="header_dropdown">
 					<form onSubmit={this.callSearch}>
 					  <input  name="country" id="country" placeHolder="UK" />
@@ -173,30 +174,30 @@ class App extends Component {
 					<p align="center">{this.state.location}</p>
 				</div>
 			</div>
-				
-			<Conditions 
+
+			<Conditions
 				temperature={this.state.temperature}
 				condition={this.state.condition}
 				feelslike={this.state.feelslike}
 				hi={this.state.hi}
 				lo={this.state.lo}
 			/>
-				
-				
+
+
 			<Rest
 				hours={this.state.hours}
 				icons={this.state.icons}
 			/>
-				
-				
+
+
 			<Compare
 				yHi={this.state.yesterdayHi}
 				yLo={this.state.yesterdayLo}
 				high={this.state.hi}
 				low={this.state.lo}
 			/>
-				
-				
+
+
 			<Footer
 				Conditions={this.state.condition}
 				Temperature={this.state.temperature}
@@ -204,7 +205,7 @@ class App extends Component {
 				low={this.state.lo}
 				cofr={this.state.rain}/>
 		</div>
-			
+
 		);
 	}
 
