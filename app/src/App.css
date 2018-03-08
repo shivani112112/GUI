@@ -148,36 +148,47 @@ table {
 #bakerloo{
     background-color: #996633;
 }
+
 #central{
 	background-color:red;
 }
+
 #circle{
     background-color: #ffcc00;
 }
+
 #district{
     background-color: #006633;
 }
+
 #hammersmith-city{
     background-color: #FF99CC;
 }
+
 #jubilee{
     background-color: #666666;
 }
+
 #metropolitan{
     background-color: #990033;
 }
+
 #northern{
     background-color: #000000;
 }
+
 #piccadilly{
     background-color: #003399;
 }
+
 #victoria{
     background-color: #3399CC;
 }
+
 #waterloo-city{
     background-color: #66CCCC;
 }
+
 .scroll{
 	height: 80%;
 	max-height: 27vh;
