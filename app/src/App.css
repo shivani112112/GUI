@@ -5,6 +5,7 @@
 	height:100vh;
 	color: aliceblue;
 	text-shadow: 1px 1px 6px black;
+position:relative;
 }
 
 
@@ -14,16 +15,8 @@
 	padding:10px;
 }
 
-.header_search{
 
 
-}
-
-.header_location{
-	width: fit-content;
-	margin: 0 auto;
-	margin-top:-48px;
-}
 
 .conditions{
 
@@ -117,7 +110,7 @@ table {
 }
 
 #header_dropdown{
-	width:86%;
+	width:74%;
 	height:0%;
 	left:40px;
 	background-color:rgba(0,0,0,0.2);
@@ -130,7 +123,24 @@ table {
 	padding-left: 12px;
 }
 
-<<<<<<< HEAD
+.header_search{
+
+
+}
+.header_share{
+
+	position: absolute;
+	 top: 12px;
+	 right: 16px;
+	 font-size: 18px;
+
+}
+
+.header_location{
+	width: fit-content;
+	margin: 0 auto;
+	margin-top:-40px;
+}
 
 #theTake{
 	top:57.5vh;
@@ -146,10 +156,8 @@ table {
 	font-size: 20px;
 	overflow-y: auto;
 }
-#theTravel{
-=======
+
 #theTravel,#theTake{
->>>>>>> 6d6951f0f149bbbebbc597593dea84e8f738ec6a
 	top:57.5vh;
 	height:300%;
 	width:100%;
