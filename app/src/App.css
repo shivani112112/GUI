@@ -117,8 +117,8 @@ table {
 }
 
 #header_dropdown{
-	width:80%;
-	/* height:0%; */
+	width:86%;
+	height:0%;
 	left:40px;
 	background-color:rgba(0,0,0,0.2);
 	position:absolute;
