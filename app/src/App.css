@@ -1,4 +1,4 @@
-#App{
+#App{ /* The CSS ID for App applies to the whole page, the main reason is to add a background image. It is an ID because one of our requirements was to have the functionality of a changing background according to sunset times and this can only be applied to an ID */
 
 	background-repeat: no-repeat;
 	background-size:cover;
@@ -9,30 +9,26 @@
 }
 
 
-.header{
+.header{ /* The CSS class for header applies to the div containing the search button, the display of the location and the share button. This allows us to set a font size and add a margin and padding in order to create space around elements inside and outside borders */
+    
 	font-size: 19px;
 	margin-bottom: 10px;
 	padding:10px;
 }
 
-.header_search{
+.header_search{ /* The CSS class for header applies to the search button. This ensures */
 
 
 }
 
-.header_location{
+.header_location{ /* The CSS class for header applies to the div containing the search button, the display of the location and the share button. This allows us to set a font size and add a margin and padding in order to create space around elements inside and outside borders */
+    
 	width: fit-content;
 	margin: 0 auto;
 	margin-top:-48px;
 }
-.header_share{
 
-	position: absolute;
-	 top: 12px;
-	 right: 16px;
-	 font-size: 18px;
-}
-.conditions{
+.conditions{ /* The CSS class for conditions applies to the section containing the conditions of the day: the emoji, the current weather, the high and low, the feels like and the condition description. We have assigned a specific font which corresponds with our design.  */
 
 	display: inline-block;
 	position:relative;
@@ -42,7 +38,7 @@
 	font-size: 20px;
 }
 
-.conditions_l{
+.conditions_l{ /* The CSS class for conditions_l applies to the left section of the conditions, so the emoji and the condition description. This class ensures they are floated to the left and fit a to a specific height. It also adds center allignment to the text. */
 
 	width: 50%;
 	float: left;
@@ -52,7 +48,8 @@
 
 }
 
-.conditions_r{
+.conditions_r{ /* The CSS class for conditions_r applies to the right section of the conditions, so the current weather, the high and low and the feels like. This class ensures they are floated to the right and fit a to a specific height. It also adds center allignment to the text. */
+    
 	width: 50%;
 	float:right;
 	height: 100%;
@@ -60,18 +57,20 @@
 
 }
 
-.conditions_l_emoji{
+.conditions_l_emoji{ /* The CSS class for conditions_l_emoji applies to the emoji corresponding to the weather. This class ensures emoji is given a fixed height and width, so every emoji displayed is the same size. */
+    
 	height:150 px;
 	width:150 px;
 }
 
 
 
-.conditions_l_cond{
+.conditions_l_cond{ /* The CSS class for conditions_l_condition applies to the current weather description. This class ensures */
 
 }
 
-.conditions_r_hilo{
+.conditions_r_hilo{ /* The CSS class for conditions_r_hilo applies to the high and low for today. This class ensures the correct font and font size is used for our high and low, and padding is added in order to seperate it from the current temperature and feels like element. */
+    
 	font-family: "Mukta Mahee";
 	font-size: 25px;
 	padding-bottom: 5px;
@@ -79,7 +78,8 @@
 
 }
 
-.conditions_r_temp{
+.conditions_r_temp{ /* The CSS class for conditions_r_temp applies to the current temperature. This class ensures the correct font is used, this varsity style font is very important as it is a key requirement for our stakeholder. The font has also been edited and given style to make it more appealing. A margin has been added at the top and bottom in order to create space around the elements.*/
+    
 	font-family:"Graduate";
 	font-size: 70px;
 	font-weight: 900;
@@ -88,29 +88,20 @@
 	margin-top: -5px;
 }
 
-.conditions_r_fl{
+.conditions_r_fl{ /* The CSS class for conditions_r_fl applies to the feels like element. This class ensures that a margin is kept at the top of the feels like, in order to keep spacing between the low for the day and the feels like. */
+    
 	margin-top: 12px;
 
 }
 
 
-.rest{
+.rest{ /* The CSS class for rest applies to the section in the middle of the screen which shows an emoji of the weather for the next 7 hours . This class ensures that a margin is kept at the top of the feels like, in order to keep spacing between the low for the day and the feels like. */
 
 
 }
 
-
-
-table {
-	width: 100%;
-	text-align: center;
-	min-height: 80px;
-	background-color:rgba(0,0,0,0.2);
-}
-
-
-
-.compare{
+.compare{ /* The CSS class for compare applies to the */
+    
 	font-family: "Pacifico";
 	font-size: 30px;
 	min-width: 100%;
@@ -250,6 +241,14 @@ form{
 	display: inline-flex;
 }
 
+table {
+    
+	width: 100%;
+	text-align: center;
+	min-height: 80px;
+	background-color:rgba(0,0,0,0.2);
+}
+
 #country,#city{
 	border-radius: 8px;
 	border: 1px solid #ccc;
@@ -272,3 +271,4 @@ form{
 
 
 }
+>>>>>>> a640d0e6f94f4322cf06602d81e2fba40f66fd61
