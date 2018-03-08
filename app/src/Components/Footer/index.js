@@ -8,7 +8,9 @@ class Footer extends Component {
     this.state = {
       travel: [],
       service:[],
-      id:[]
+      id:[],
+	  trav: "greentick",
+		test: "warning"
     };
   }
 
@@ -26,16 +28,31 @@ class Footer extends Component {
     var ids=[];
     var names =[];
     var services = [];
+	var travsmall=[];
+	var changed = false;
+	var severe = false;
     for(var i=0; i<11; i++ ){
      ids[i]=parsed_json[i]['id'];
      names[i]= parsed_json[i]['name'];
      services[i]=parsed_json[i]['lineStatuses'][0]['statusSeverityDescription'];
-
-
-    }
+	 if(services[i] == "Servere Delays"&&!severe){
+		 this.setState({trav:"stop"});
+		 severe = true;
+	 } 
+	 else if(services[i] == "Minor Delays"&&!changed) {
+		 this.setState({trav:"warning"});
+		 changed=true;
+	 }
+	
+    } 
+	 //if(!severe && !changed) this.setState({trav:"sunglasses"});
+	
     this.setState({travel:names, service: services, id:ids});
+			
   }
   render() {
+	//TRAVEL INFO STARTS HERE.
+//	var travsmall=[];
     var trav=[];
     for (var i = 0; i < 11; i++) {
       trav.push(<tr><td id={this.state.id[i]}>{this.state.travel[i]}</td><td>{this.state.service[i]}</td></tr>);
@@ -87,7 +104,7 @@ class Footer extends Component {
       <div className="footer">
 
 		      <button className="footer_take" onClick={this.showWhatToTake.bind(this)}><div><h3>What to take</h3>{takesmall}</div></button>
-      		<button className="footer_travel" onClick={this.showTravel.bind(this)}><div><h3>Travel</h3></div></button>
+      		<button className="footer_travel" onClick={this.showTravel.bind(this)}><div><h3>Travel</h3><img src ={require('../../Images/'+this.state.trav+'.png')} width="40px" height="40px" /><img src={require('../../Images/train.png')} height="40px" width="40px"/></div></button>
 
           <div id="theTake"><button onClick={this.closeTake.bind(this)}>
           <div className="hello">
