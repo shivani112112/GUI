@@ -15,7 +15,8 @@
 }
 
 .header_search{
-	
+
+
 }
 
 .header_location{
@@ -55,7 +56,6 @@
 .conditions_l_emoji{
 	height:150 px;
 	width:150 px;
-
 }
 
 
@@ -117,8 +117,8 @@ table {
 }
 
 #header_dropdown{
-	width:90%;
-	height:0%;
+	width:80%;
+	/* height:0%; */
 	left:40px;
 	background-color:rgba(0,0,0,0.2);
 	position:absolute;
@@ -127,22 +127,10 @@ table {
 	transition: 0.9s;
 	display: inline-block;
 	padding-top: 5px;
-	padding-left: 10px;
+	padding-left: 12px;
 }
 
-#theTake{
-	display: inline-block;
-	top:57.5vh;
-	height:300%;
-	width:100%;
-	position:absolute;
-	background-color:rgba(0,0,0,0.7);
-	left:-100%;
-	z-index:1;
-	transition: 0.9s;
-	display: inline-block;
-}
-#theTravel{
+#theTravel,#theTake{
 	top:57.5vh;
 	height:300%;
 	width:100%;
