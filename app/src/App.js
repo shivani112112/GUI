@@ -65,6 +65,7 @@ class App extends Component {
 			console.log(city+" "+country);
 			if (country=="" && city!="") loc = "UK/"+city;
 			else if (country!="" && city!="") loc = country+"/"+city;
+			else loc=latlon;
 		
 		this.getWeather();
 		document.getElementById("header_dropdown").style.height="0%";

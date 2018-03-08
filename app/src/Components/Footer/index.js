@@ -61,12 +61,10 @@ class Footer extends Component {
 
     var takesmall=[];
 	var takebig=[];
-    if(this.props.Conditions == "rain"){
+    if(this.props.Conditions == "Rain"){
         takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
 
-  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>"It is currently raining so don't forget to take your umbrella!"</td></tr>);
-
-  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>"It is currently raining so don't forget your umbrella!"</td></tr>);
+  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>It is currently raining so don't forget to take your umbrella!</td></tr>);
 
   }
 	else if(this.props.cofr>50){
