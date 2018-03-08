@@ -193,6 +193,11 @@ class App extends Component {
 				<div className="header_location">
 					<p align="center">{this.state.location}</p>
 				</div>
+        <div className="header_share">
+         <button onClick={this.searchdown}>
+           <img src={require('./Images/share.png')} height="20 px" width="20 px"/>
+         </button>
+       </div>
 			</div>
 
 			<Conditions
