@@ -40,7 +40,7 @@ class App extends Component {
 
 
 	searchdown=(e)=> {
-		document.getElementById("header_dropdown").style.height="10%";
+		document.getElementById("header_dropdown").style.height="6%";
 		document.getElementById("header_dropdown").style.top="0%";
     }
 
