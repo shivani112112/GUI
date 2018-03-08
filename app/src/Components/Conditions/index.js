@@ -7,7 +7,12 @@ class Conditions extends Component {
 	  console.log(this.props.condition);
 	  console.log(this.props.hi)
 	  var temp = this.props.condition;
-	  if(temp==="Clear"  || temp==="Very Hot" || temp==="Mostly Sunny" || temp==="Sunny") p = "sunface";
+	  if(temp==="Clear"  || temp==="Very Hot" || temp==="Mostly Sunny" || temp==="Sunny") {
+		  	var d= new Date();
+		  	var n= d.getHours();
+		  	if(n>this.props.sunset||n<this.props.sunrise) p="newmoon";
+			else p ="sunface";
+	  }
 	  else if(temp=== "Partly Cloudy" || temp ==="Mostly Cloudy"|| temp==="Scattered Clouds" || temp==="Partly Sunny") p="partcloudy";
 	  else if(temp==="Cloudy" || temp==="Overcast") p = "cloudy";
 	  else if(temp==="Very Cold") p = "cold";
