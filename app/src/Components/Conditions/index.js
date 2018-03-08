@@ -1,33 +1,29 @@
 import React, {render, Component } from 'react';
-import ReactDOM from 'react-dom';
-import $ from 'jquery';
+
+var picture = undefined;
 
 class Conditions extends Component {
-	constructor(props) {
-    super(props);
-    this.state = {
-      pic:"sunface"
-    };
-  }
-
+  
   render() {
-	  var p ="";
+	  var p ="sunface";
 	  console.log(this.props.condition);
+	  console.log(this.props.hi)
 	  var temp = this.props.condition;
-	  if(temp=="Clear"  || temp=="Very Hot") p = "sunface";
-	  else if(temp== "Partly Cloudy" || temp =="Mostly Cloudy") p="partcloudy";
-	  else if(temp=="Cloudy" || temp=="Overcast") p = "cloudy";
-	  else if(temp=="Very Cold") p = "cold";
-	  else if(temp=="Chance of Flurries" || temp=="Chance of Freezing Rain" || temp=="Chance of Sleet" || temp=="Chance of Snow" || temp=="Freezing Rain" || temp=="Sleet" || temp=="Snow" || temp=="Flurries") p = "snow";
-	  else if(temp=="Chance of Rain" || temp=="Chance Rain" || temp=="Rain") p = "rain";
-	  else p="sunglasses";
+	  if(temp==="Clear"  || temp==="Very Hot") p = "sunface";
+	  else if(temp=== "Partly Cloudy" || temp ==="Mostly Cloudy"|| temp==="Scattered Clouds") p="partcloudy";
+	  else if(temp==="Cloudy" || temp==="Overcast") p = "cloudy";
+	  else if(temp==="Very Cold") p = "cold";
+	  else if(temp==="Chance of Flurries" || temp==="Chance of Freezing Rain" || temp==="Chance of Sleet" || temp==="Chance of Snow" || temp==="Freezing Rain" || temp==="Sleet" || temp==="Snow" || temp==="Flurries") p = "snow";
+	  else if(temp==="Chance of Rain" || temp==="Chance Rain" || temp==="Rain") p = "rain";
+	  else if(temp==="Chance of Thunderstorms" || temp==="Chance of a Thunderstorm") p = "thunder"
 	  
-	  //this.setState({pic:p});
+	  
+	  picture=p;
 	  
     return (
     <div className="conditions">
         <div className="conditions_l">
-            <div className="conditions_l_emoji"><img src ={require('../../Images/'+this.props.condition+'.png')} /></div>
+            <div className="conditions_l_emoji"><img src ={require('../../Images/'+picture+'.png')} alt="condition"/></div>
             <div className="conditions_l_cond"><p>{this.props.condition}</p></div>
         </div>
 

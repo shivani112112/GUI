@@ -15,7 +15,7 @@
 }
 
 .header_search{
-
+min-width: hh;
 }
 
 .header_location{
@@ -236,4 +236,8 @@ input {
 
 button{
 	all: unset;
+}
+
+form{
+	display: inline-flex;
 }
