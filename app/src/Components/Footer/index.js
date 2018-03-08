@@ -38,17 +38,17 @@ class Footer extends Component {
 	 if(services[i] == "Servere Delays"&&!severe){
 		 this.setState({trav:"stop"});
 		 severe = true;
-	 }
+	 } 
 	 else if(services[i] == "Minor Delays"&&!changed) {
 		 this.setState({trav:"warning"});
 		 changed=true;
 	 }
-
-    }
+	
+    } 
 	 //if(!severe && !changed) this.setState({trav:"sunglasses"});
-
+	
     this.setState({travel:names, service: services, id:ids});
-
+			
   }
   render() {
 	//TRAVEL INFO STARTS HERE.
@@ -105,7 +105,8 @@ class Footer extends Component {
       		<button className="footer_travel" onClick={this.showTravel.bind(this)}><div><h3>Travel</h3><img src ={require('../../Images/'+this.state.trav+'.png')} width="40px" height="40px" /><img src={require('../../Images/train.png')} height="40px" width="40px"/></div></button>
 
           <div id="theTake"><button onClick={this.closeTake.bind(this)}>
-          <div className="hello">
+          <div className="hello"></div>
+          <div className= "bye">
 			  	<h2>What to take</h2>
 				<table>
 					{takebig}
