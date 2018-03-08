@@ -28,6 +28,7 @@ position:relative;
 	font-size: 20px;
 }
 
+
 .conditions_l{
 
 	width: 50%;
@@ -124,6 +125,29 @@ table {
 }
 
 .header_search{
+
+
+}
+
+#country,#city{
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin: 8px 2px;
+}
+
+#go{
+
+	border-radius: 8px;
+	background-color:#5e605f ; /* Green */
+    border: none;
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 1px;
+
 
 
 }
