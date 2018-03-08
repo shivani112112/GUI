@@ -248,3 +248,27 @@ table {
 	min-height: 80px;
 	background-color:rgba(0,0,0,0.2);
 }
+
+#country,#city{
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin: 8px 2px;
+}
+
+#go{
+
+	border-radius: 8px;
+	background-color:#5e605f ; /* Green */
+    border: none;
+    color: white;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 1px;
+
+
+
+}
+>>>>>>> a640d0e6f94f4322cf06602d81e2fba40f66fd61

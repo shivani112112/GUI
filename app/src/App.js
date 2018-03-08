@@ -145,7 +145,6 @@ class App extends Component {
 			rain: planner.trip.chance_of.chanceofrainday.percentage,
 			sunrise: astronomy.sun_phase.sunrise.hour,
 			sunset: astronomy.sun_phase.sunset.hour
-
 		});
 
 
@@ -161,9 +160,9 @@ class App extends Component {
 			<div className="header">
 				<div id="header_dropdown">
 					<form onSubmit={this.callSearch}>
-					  <input  name="country" id="country" placeHolder="UK" />
-						<input  name="city" id="city" placeHolder="London" />
-					  <input type="submit" value="Go" />
+					  <input  id="country" name="country" id="country" placeHolder="UK" />
+						<input  id="city" name="city" id="city" placeHolder="London" />
+					  <input id="go" type="submit" value="Go" />
 					</form>
 				</div>
 				<div className="header_search">
@@ -187,12 +186,16 @@ class App extends Component {
 				feelslike={this.state.feelslike}
 				hi={this.state.hi}
 				lo={this.state.lo}
+        sunrise={this.state.sunrise}
+        sunset={this.state.sunset}
 			/>
 
 
 			<Rest
 				hours={this.state.hours}
 				icons={this.state.icons}
+        sunrise={this.state.sunrise}
+        sunset={this.state.sunset}
 			/>
 
 
