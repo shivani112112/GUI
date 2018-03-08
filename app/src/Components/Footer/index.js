@@ -38,17 +38,17 @@ class Footer extends Component {
 	 if(services[i] == "Servere Delays"&&!severe){
 		 this.setState({trav:"stop"});
 		 severe = true;
-	 } 
+	 }
 	 else if(services[i] == "Minor Delays"&&!changed) {
 		 this.setState({trav:"warning"});
 		 changed=true;
 	 }
-	
-    } 
+
+    }
 	 //if(!severe && !changed) this.setState({trav:"sunglasses"});
-	
+
     this.setState({travel:names, service: services, id:ids});
-			
+
   }
   render() {
 	//TRAVEL INFO STARTS HERE.
@@ -64,7 +64,7 @@ class Footer extends Component {
     if(this.props.Conditions == "Rain"){
         takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
 
-  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>It is currently raining so don't forget to take your umbrella!</td></tr>);
+  		takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>It is currently raining so dont forget to take your umbrella!</td></tr>);
 
   }
 	else if(this.props.cofr>50){
@@ -99,20 +99,20 @@ class Footer extends Component {
 
 
     return (
-      <div className="footer">
 
+      <div className="footer">
+          <div id="blur">
 		      <button className="footer_take" onClick={this.showWhatToTake.bind(this)}><div><h3>What to take</h3>{takesmall}</div></button>
       		<button className="footer_travel" onClick={this.showTravel.bind(this)}><div><h3>Travel</h3><img src ={require('../../Images/'+this.state.trav+'.png')} width="40px" height="40px" /><img src={require('../../Images/train.png')} height="40px" width="40px"/></div></button>
-
+</div>
           <div id="theTake"><button onClick={this.closeTake.bind(this)}>
-          <div className="hello"></div>
-          <div className= "bye">
-			  	<h2>What to take</h2>
+
+			  	<h2 align="center">What to take</h2>
 				<table>
 					{takebig}
 				</table>
-        </div>
 		  </button ></div>
+
 
           <div id="theTravel"> <button onClick={this.closeTravel.bind(this)}>
 			         <h2>
@@ -121,7 +121,6 @@ class Footer extends Component {
               <table>
                 {trav}
               </table></div>
-
            </button></div>
       </div>
 
@@ -130,18 +129,26 @@ class Footer extends Component {
   }
   showWhatToTake =(e) =>{
       document.getElementById("theTake").style.left="0%"
+      document.getElementById("blur").style="filter: blur(3px)";
+      document.getElementById("blur2").style="filter: blur(3px)";
   }
   showTravel= (e) =>{
       this.getTravelInfo()
       document.getElementById("theTravel").style.left="0%"
+      document.getElementById("blur").style="filter: blur(3px)";
+      document.getElementById("blur2").style="filter: blur(3px)";
   }
 
   closeTake= (e) =>{
       document.getElementById("theTake").style.left="-100%"
+      document.getElementById("blur").style="filter: blur(0px)";
+      document.getElementById("blur2").style="filter: blur(0px)";
   }
 
   closeTravel= (e) =>{
       document.getElementById("theTravel").style.left="-100%"
+      document.getElementById("blur").style="filter: blur(0px)";
+      document.getElementById("blur2").style="filter: blur(0px)";
   }
 
 }

@@ -9,7 +9,7 @@ class Compare extends Component {
 
     var max="yesterday";
     if(this.props.yHi>this.props.high && this.props.yLo> this.props.low){
-      
+
       max="cooler than " +max;
     }
     else if(this.props.yHi<this.props.high && this.props.yLo< this.props.low){
@@ -20,7 +20,7 @@ class Compare extends Component {
     }
     return (
       <div className="compare">
-          <p>{max}</p>
+          {max}
       </div>
     );
   }

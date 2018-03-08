@@ -160,9 +160,9 @@ class App extends Component {
 			<div className="header">
 				<div id="header_dropdown">
 					<form onSubmit={this.callSearch}>
-					  <input  id="country" name="country" id="country" placeHolder="UK" />
-						<input  id="city" name="city" id="city" placeHolder="London" />
-					  <input id="go" type="submit" value="Go" />
+					  <input  name="country" id="country" placeHolder="UK" />
+						<input  name="city" id="city" placeHolder="London" />
+					  <input type="submit" value="Go" />
 					</form>
 				</div>
 				<div className="header_search">
@@ -198,14 +198,14 @@ class App extends Component {
         sunset={this.state.sunset}
 			/>
 
-
+      <div id="blur2">
 			<Compare
 				yHi={this.state.yesterdayHi}
 				yLo={this.state.yesterdayLo}
 				high={this.state.hi}
 				low={this.state.lo}
 			/>
-
+      </div>
 
 			<Footer
 				Conditions={this.state.condition}
