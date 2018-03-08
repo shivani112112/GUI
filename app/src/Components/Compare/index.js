@@ -20,7 +20,7 @@ class Compare extends Component {
     }
     return (
       <div className="compare">
-          {max}
+          <p>{max}</p>
       </div>
     );
   }
