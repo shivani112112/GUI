@@ -20,7 +20,13 @@
 
 
 }
+.header_share{
 
+	position: absolute;
+	 top: 12px;
+	 right: 16px;
+	 font-size: 18px;
+}
 .header_location{ /* The CSS class for header applies to the div containing the search button, the display of the location and the share button. This allows us to set a font size and add a margin and padding in order to create space around elements inside and outside borders */
 
 	width: fit-content;
