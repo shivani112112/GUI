@@ -105,13 +105,11 @@ class Footer extends Component {
       		<button className="footer_travel" onClick={this.showTravel.bind(this)}><div><h3>Travel</h3><img src ={require('../../Images/'+this.state.trav+'.png')} width="40px" height="40px" /><img src={require('../../Images/train.png')} height="40px" width="40px"/></div></button>
 
           <div id="theTake"><button onClick={this.closeTake.bind(this)}>
-          <div className="hello"></div>
-          <div className= "bye">
+          
 			  	<h2>What to take</h2>
 				<table>
 					{takebig}
 				</table>
-        </div>
 		  </button ></div>
 
           <div id="theTravel"> <button onClick={this.closeTravel.bind(this)}>
