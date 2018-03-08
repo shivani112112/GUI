@@ -9,12 +9,9 @@ import {
 } from 'react-share';
 
 var apikey = "87f7487f0bc89791";
-var latlon = undefined;
-var loc="/UK/london";
 
 class App extends Component {
 	state = {
-		location: undefined,
 		temperature: undefined,
 		condition: undefined,
 		feelslike: undefined,
@@ -29,69 +26,43 @@ class App extends Component {
 		sunset: undefined
 	}
 
-	componentWillMount = async() => {
-		
-		await navigator.geolocation.getCurrentPosition(this.success, this.error);
-		
-//		this.getWeather();
-	}
-	
-	
-
 
 	searchdown=(e)=> {
 		document.getElementById("header_dropdown").style.height="10%";
 		document.getElementById("header_dropdown").style.top="0%";
     }
 	
-
-	
-	success = async (pos) =>{
-		console.log(pos);
-		var lat = await pos.coords.latitude;
-		var lon = await pos.coords.longitude;
-		loc = await lat+","+lon;
-		latlon = await lat+","+lon;
-		console.log(loc);
-		this.getWeather();
-	}
-	
-	callSearch =(e) => {
-			
-		if(e) e.preventDefault();
-		
-			var city = e.target.elements.city.value;
-			var country = e.target.elements.country.value;
-			console.log(city+" "+country);
-			if (country=="" && city!="") loc = "UK/"+city;
-			else if (country!="" && city!="") loc = country+"/"+city;
-		
-		this.getWeather();
+	searchup = (e) => {
 		document.getElementById("header_dropdown").style.height="0%";
 		document.getElementById("header_dropdown").style.top="-40%";
 	}
 	
-	getWeather = async () =>{	
+	getWeather = async (e) =>{
 		
 		
-		var apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/conditions/q/'+loc+'.json');
+		e.preventDefault();
+		
+		var place = e.target.elements.place.value;
+		console.log(place);
+		
+		var apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/conditions/q/UK/london.json');
 		const conds = await apicall.json();
 		console.log(conds);
 		
-		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/yesterday/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/yesterday/q/UK/london.json');
 		const yest = await apicall.json();
 		console.log(yest);
 		
-		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/forecast10day/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/forecast10day/q/UK/london.json');
 		const tenday = await apicall.json();
 		console.log(tenday);
 		
-		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/planner_07010731/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/planner_07010731/q/UK/london.json');
 		const planner = await apicall.json();
 		console.log(planner);
 		
 		
-		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/hourly/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/hourly/q/UK/london.json');
 		const hourly = await apicall.json();
 		console.log(hourly);
 		var hour=[];
@@ -101,36 +72,21 @@ class App extends Component {
 				temp = temp.split(" ")
 				var temp1 = temp[0].split(":");
 				hour[i]=temp1[0]+" "+temp[1];
-				icon[i]=hourly.hourly_forecast[i].condition;
+				icon[i]=hourly.hourly_forecast[i].icon;
 			}
 		
 		
-		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/astronomy/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/astronomy/q/UK/london.json');
 		const astronomy = await apicall.json();
 		console.log(astronomy);
 		var sunr: astronomy.sun_phase.sunrise.hour;
 		var suns: astronomy.sun_phase.sunset.hour;
-		var n = new Date().getHours();
+		var n = new Date().getHours;
 		let url= require("./Images/night.jpg")
     	let url2= require("./Images/day.jpg")
-		console.log(n+" hours");
-		
-		
-		if(n>suns || n<sunr){
-      document.getElementById("App").style.background='url(' + url + ')';
-      document.getElementById("App").style.backgroundRepeat= "no-repeat";
-    	document.getElementById("App").style.backgroundSize="cover";
-    }
-    else{
-      document.getElementById("App").style.background='url(' + url2 + ')';
-      document.getElementById("App").style.backgroundRepeat= "no-repeat";
-    	document.getElementById("App").style.backgroundSize="cover";
-    }
-		
-		
+		console.log(n+" hours")
 		
 		this.setState({
-			location: conds.current_observation.display_location.city,
 			temperature: conds.current_observation.temp_c,
 			condition: conds.current_observation.weather,
 			feelslike: conds.current_observation.feelslike_c,
@@ -151,16 +107,14 @@ class App extends Component {
 
 	render(){
 		
-		
 		this.getWeather
 		
 		return(
 		<div id="App">
 			<div className="header">	
 				<div id="header_dropdown">
-					<form onSubmit={this.callSearch}>
-					  <input  name="country" id="country" placeHolder="UK" />
-						<input  name="city" id="city" placeHolder="London" />
+					<form onSubmit={this.getWeather}>
+					  <input  name="place" id="searchBox" placeHolder="Gobihan" />
 					  <input type="submit" value="Go" />
 					</form>
 				</div>
@@ -168,9 +122,6 @@ class App extends Component {
 					<button onClick={this.searchdown}>
 						<img src={require('./Images/search.png')} height="20 px" width="20 px"/>
 					</button>
-				</div>
-				<div className="header_location">
-					<p align="center">{this.state.location}</p>
 				</div>
 			</div>
 				
