@@ -32,6 +32,7 @@ class App extends Component {
   searchdown=(e)=> {
 		document.getElementById("header_dropdown").style.height="6%";
 		document.getElementById("header_dropdown").style.top="0%";
+    document.getElementById("blur3").style= "filter: blur(3px)";
   }
 
   success = async (pos) =>{
@@ -52,6 +53,7 @@ class App extends Component {
 		this.getWeather();
 		document.getElementById("header_dropdown").style.height="0%";
 		document.getElementById("header_dropdown").style.top="-40%";
+    document.getElementById("blur3").style= "filter: blur(0px)";
 	}
 
 	share = (e)=>{
@@ -133,9 +135,10 @@ class App extends Component {
 					            <form onSubmit={this.callSearch}>
 					                 <input  name="country" id="country" placeholder="UK" />
 						               <input  name="city" id="city" placeholder="London" />
-					                 <input type="submit" value="Go" />
+					                 <input id="go" type="submit" value="Go" />
 					            </form>
 				         </div>
+                 <div id="blur3">
 				         <div className="header_search">
 					            <button onClick={this.searchdown}>
 						                <img src={require('./Images/search.png')} height="20 px" width="20 px"/>
@@ -149,6 +152,7 @@ class App extends Component {
                             <img src={require('./Images/share.png')} height="20 px" width="20 px"/>
                       </button>
                  </div>
+                </div>
 			       </div>
 			       <Conditions
 				         temperature={this.state.temperature}
