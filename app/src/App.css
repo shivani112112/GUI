@@ -273,7 +273,7 @@ table {
     display: inline-block;
     font-size: 16px;
     margin: 8px 1px;
-
-
-
+}
+#blur, #blur2{
+	transition: 0.9s;
 }
