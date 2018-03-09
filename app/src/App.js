@@ -54,6 +54,12 @@ class App extends Component {
 		document.getElementById("header_dropdown").style.top="-40%";
 	}
 
+	share = (e)=>{
+    console.log("Shared");
+		var text= "It is " + this.state.temperature + " degrees right now";
+    window.location.assign("https://twitter.com/intent/tweet?url=&text="+text);
+  }
+
 	getWeather = async () =>{
 		var apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/conditions/q/'+loc+'.json');
 		const conds = await apicall.json();
@@ -139,7 +145,7 @@ class App extends Component {
 					            <p align="center">{this.state.location}</p>
 				         </div>
                  <div className="header_share">
-                    <button onClick={this.searchdown}>
+                    <button onClick={this.share}>
                             <img src={require('./Images/share.png')} height="20 px" width="20 px"/>
                       </button>
                  </div>
