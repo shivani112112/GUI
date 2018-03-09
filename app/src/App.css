@@ -1,4 +1,6 @@
-#App{ /* The CSS ID for App applies to the whole page, the main reason is to add a background image. It is an ID because one of our requirements was to have the functionality of a changing background according to sunset times and this can only be applied to an ID */
+#App{
+/* The ID for App applies to the whole page, this allows to add a background image.
+It is an ID because one of our requirements was to have the functionality of a changing background according to sunset times. */
 
 	background-repeat: no-repeat;
 	background-size:cover;
@@ -8,17 +10,15 @@
 }
 
 
-.header{ /* The CSS class for header applies to the div containing the search button, the display of the location and the share button. This allows us to set a font size and add a margin and padding in order to create space around elements inside and outside borders */
+.header{
+/* The CSS class for header applies to the div containing the search button, the display of the location and the share button.
+This allows us to set a font size and add a margin and padding in order to create space around elements inside and outside borders */
 
 	font-size: 19px;
 	margin-bottom: 10px;
 	padding:10px;
 }
 
-.header_search{ /* The CSS class for header applies to the search button. This ensures */
-
-
-}
 .header_share{
 
 	position: absolute;

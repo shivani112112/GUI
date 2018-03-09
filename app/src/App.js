@@ -142,7 +142,7 @@ class App extends Component {
 					            </form>
 				         </div>
                  <div id="blur3">
-				         <div className="header_search">
+				         <div>
 					            <button onClick={this.searchdown}>
 						                <img src={require('./Images/search.png')} height="20 px" width="20 px"/>
 					            </button>
