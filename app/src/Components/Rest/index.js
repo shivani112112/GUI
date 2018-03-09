@@ -5,7 +5,7 @@ class Rest extends Component {
 	render() {
 		var hourcells=[];
 		var iconcells=[];
-			if(this.props.hours==undefined){}
+			if(this.props.hours===undefined){}
 			else{
 					for(var i=0; i<this.props.hours.length ;i++){
 							hourcells.push(<td>{this.props.hours[i]}</td>);

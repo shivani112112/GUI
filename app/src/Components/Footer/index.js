@@ -32,11 +32,11 @@ class Footer extends Component {
         ids[i]=parsed_json[i]['id'];
         names[i]= parsed_json[i]['name'];
         services[i]=parsed_json[i]['lineStatuses'][0]['statusSeverityDescription'];
-	         if(services[i] == "Servere Delays"&&!severe){
+	         if(services[i] === "Servere Delays"&&!severe){
 		           this.setState({trav:"stop"});
 		           severe = true;
 	         }
-	         else if(services[i] == "Minor Delays"&&!changed) {
+	         else if(services[i] === "Minor Delays"&&!changed) {
 		           this.setState({trav:"warning"});
 		           changed=true;
 	         }
@@ -52,7 +52,7 @@ class Footer extends Component {
     }
     var takesmall=[];
 	  var takebig=[];
-      if(this.props.Conditions == "Rain"){
+      if(this.props.Conditions === "Rain"){
         takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
         takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>It is currently raining so dont forget to take your umbrella!</td></tr>);
       }
@@ -74,7 +74,7 @@ class Footer extends Component {
         takesmall.push(<img src={require('../../Images/suncream.png')} height="40px" width="40px"/>);
         takebig.push(<tr><td><img src={require('../../Images/suncream.png')} height="40px" width="40px"/></td><td>It's warm outside, so don't forget to take your suncream!</td></tr>);
       }
-      if(this.props.Conditions == "sunny" ){
+      if(this.props.Conditions === "sunny" ){
         takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);
         takebig.push(<tr><td><img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/></td><td>It's sunny outside, so don't forget to take your sunglasses!</td></tr>);
         takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);
