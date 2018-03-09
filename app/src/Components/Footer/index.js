@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
 class Footer extends Component {
@@ -27,7 +26,6 @@ class Footer extends Component {
     var ids=[];
     var names =[];
     var services = [];
-	  var travsmall=[];
 	  var changed = false;
 	  var severe = false;
       for(var i=0; i<11; i++ ){
@@ -51,7 +49,7 @@ class Footer extends Component {
   render() {
     var trav=[];
     for (var i = 0; i < 11; i++) {
-      trav.push(<tr><td id={this.state.id[i]}>{this.state.travel[i]}</td><td>{this.state.service[i]}</td></tr>);
+      trav.push(<tbody><tr><td id={this.state.id[i]}>{this.state.travel[i]}</td><td>{this.state.service[i]}</td></tr></tbody>);
     }
     var takesmall=[];
 	  var takebig=[];

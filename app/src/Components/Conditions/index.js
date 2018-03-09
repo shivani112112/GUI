@@ -1,4 +1,4 @@
-import React, {render, Component } from 'react';
+import React, {Component } from 'react';
 
 class Conditions extends Component {
 
@@ -18,7 +18,7 @@ class Conditions extends Component {
 	  else if(temp==="Chance of Rain" || temp==="Chance Rain" || temp==="Rain") p = "rain";
 	  else if(temp==="Chance of Thunderstorms" || temp==="Chance of a Thunderstorm" || temp==="Thunderstorm" || temp==="Thunderstorms" || temp==="Unknown") p = "thunder";
 	  else if(temp==="Fog"|| temp==="Haze") p="fog";
-	    	  
+
     return (
       <div className="conditions">
         <div className="conditions_l">

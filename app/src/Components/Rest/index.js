@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import $ from 'jquery';
 
 class Rest extends Component {
 
@@ -26,18 +24,20 @@ class Rest extends Component {
 			  				else if(temp==="Chance of Rain" || temp==="Chance Rain" || temp==="Rain") p = "rain";
 			  				else if(temp==="Chance of Thunderstorms" || temp==="Chance of a Thunderstorm" || temp==="Thunderstorm" || temp==="Thunderstorms" || temp==="Unknown") p = "thunder";
 			  				else if(temp==="Fog"|| temp==="Haze") p="fog";
-							iconcells.push(<td><img src={require('../../Images/'+p+'.png')} width="40px" height="40px" /></td>);
+							iconcells.push(<td><img src={require('../../Images/'+p+'.png')} alt={p} width="40px" height="40px" /></td>);
 					}
 			}
 		return (
 			<div className="rest">
 				<table>
-					<tr>
-						{hourcells}
-					</tr>
-					<tr>
-						{iconcells}
-					</tr>
+					<tbody>
+						<tr>
+							{hourcells}
+						</tr>
+						<tr>
+							{iconcells}
+						</tr>
+					</tbody>
 				</table>
 			</div>
 		);

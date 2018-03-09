@@ -56,19 +56,19 @@ class App extends Component {
 	}
 
 	getWeather = async () =>{
-		var apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/conditions/q/'+loc+'.json');
+		var apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/conditions/q/'+loc+'.json');
 		const conds = await apicall.json();
     console.log(conds);
-		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/yesterday/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/yesterday/q/'+loc+'.json');
 		const yest = await apicall.json();
 
-		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/forecast10day/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/forecast10day/q/'+loc+'.json');
 		const tenday = await apicall.json();
 
-		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/planner_07010731/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/planner_07010731/q/'+loc+'.json');
 		const planner = await apicall.json();
 
-		apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/hourly/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/hourly/q/'+loc+'.json');
 		const hourly = await apicall.json();
 
 		var hour=[];
@@ -81,7 +81,7 @@ class App extends Component {
 				icon[i]=hourly.hourly_forecast[i].condition;
 			}
 
-    apicall = await fetch('http://api.wunderground.com/api/87f7487f0bc89791/astronomy/q/'+loc+'.json');
+    apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/astronomy/q/'+loc+'.json');
 		const astronomy = await apicall.json();
 
 		var sunr= astronomy.sun_phase.sunrise.hour;
@@ -126,8 +126,8 @@ class App extends Component {
 			       <div className="header">
 				         <div id="header_dropdown">
 					            <form onSubmit={this.callSearch}>
-					                 <input  name="country" id="country" placeHolder="UK" />
-						               <input  name="city" id="city" placeHolder="London" />
+					                 <input  name="country" id="country" placeholder="UK" />
+						               <input  name="city" id="city" placeholder="London" />
 					                 <input type="submit" value="Go" />
 					            </form>
 				         </div>
