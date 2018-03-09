@@ -93,7 +93,9 @@ class Footer extends Component {
               <button onClick={this.closeTake.bind(this)}>
                 <h2 align="center">What to take</h2>
 				            <table>
+                      <tbody>
 					             {takebig}
+                      </tbody>
 				            </table>
 		          </button >
             </div>

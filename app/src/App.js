@@ -58,7 +58,7 @@ class App extends Component {
 	getWeather = async () =>{
 		var apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/conditions/q/'+loc+'.json');
 		const conds = await apicall.json();
-    console.log(conds);
+    
 		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/yesterday/q/'+loc+'.json');
 		const yest = await apicall.json();
 
