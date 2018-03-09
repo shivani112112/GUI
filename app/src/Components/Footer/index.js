@@ -12,6 +12,7 @@ class Footer extends Component {
 		    test: "warning"
       };
   }
+	// call the api to get travel info
   getTravelInfo = ()=>{
     var url="https://api.tfl.gov.uk/Line/Mode/tube/Status?app_id=042a9bf8&app_key=9d8934a0357c9a355812182231507ae0"
     $.ajax({
@@ -21,7 +22,7 @@ class Footer extends Component {
       error : function(req, err){ console.log('API call failed ' + err); }
     })
   }
-
+  //parse the json to get the required information and store it in arrays
   parseTravelInfo = (parsed_json) =>{
     var ids=[];
     var names =[];
@@ -46,23 +47,29 @@ class Footer extends Component {
 
   }
   render() {
+	  //store train service in an array to make it easier to display when mounting
     var trav=[];
     for (var i = 0; i < 11; i++) {
       trav.push(<tbody><tr><td id={this.state.id[i]}>{this.state.travel[i]}</td><td>{this.state.service[i]}</td></tr></tbody>);
     }
+	//store objects to take in an array based on if statements
     var takesmall=[];
 	  var takebig=[];
+	  //if it is currently raining displain ay emoji
       if(this.props.Conditions === "Rain"){
         takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
         takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>It is currently raining so dont forget to take your umbrella!</td></tr>);
       }
+	  	//if chance of rain is higher than 50% display an emoji
 	    else if(this.props.cofr>50){
 		    takesmall.push(<img src={require('../../Images/umbrella.png')} height="40px" width="40px"/>);
 		    takebig.push(<tr><td><img src={require('../../Images/umbrella.png')} height="40px" width="40px"/></td><td>The chance of rain for today is {this.props.cofr}% so dont forget to take your umbrella!</td></tr>);
 	    }
+		//if current tempweratre us less than 14 or low is less than 10 display jacket emoji
       if(this.props.Temperature<14 || this.props.low<10){
         takesmall.push(<img src={require('../../Images/jacket.png')} height="40px" width="40px"/>);
         takebig.push(<tr><td><img src={require('../../Images/jacket.png')} height="40px" width="40px"/></td><td>It's chilly outside, and the low for today will be {this.props.low}° so don't forget to take your jacket!</td></tr>);
+			//if current tempweratre us less than 8 or low is less than 4 display jacket emoji
           if(this.props.Temperature<8 || this.props.low<4){
             takesmall.push(<img src={require('../../Images/hat.png')} height="40px" width="40px"/>);
             takebig.push(<tr><td><img src={require('../../Images/hat.png')} height="40px" width="40px"/></td><td>It's cold outside so don't forget to take your hat!</td></tr>);
@@ -70,10 +77,12 @@ class Footer extends Component {
             takebig.push(<tr><td><img src={require('../../Images/scarf.png')} height="40px" width="40px"/></td><td>It's cold outside so don't forget to take your scarf!</td></tr>);
           }
       }
+	  //if current tempweratre us more than 20 or high is more than 25 display jacket emoji
       else if(this.props.Temperature>20 || this.props.high>25){
         takesmall.push(<img src={require('../../Images/suncream.png')} height="40px" width="40px"/>);
         takebig.push(<tr><td><img src={require('../../Images/suncream.png')} height="40px" width="40px"/></td><td>It's warm outside, so don't forget to take your suncream!</td></tr>);
       }
+	  //if it is currently sunny display sunglasses emoji
       if(this.props.Conditions === "sunny" ){
         takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);
         takebig.push(<tr><td><img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/></td><td>It's sunny outside, so don't forget to take your sunglasses!</td></tr>);
@@ -108,24 +117,26 @@ class Footer extends Component {
         </div>
       );
   }
+  //method to move the what to take window into display
   showWhatToTake = (e) =>{
       document.getElementById("theTake").style.left="0%"
       document.getElementById("blur").style="filter: blur(3px)";
       document.getElementById("blur2").style="filter: blur(3px)";
   }
+  //method to move the travel window into display
   showTravel = (e) =>{
       this.getTravelInfo()
       document.getElementById("theTravel").style.left="0%"
       document.getElementById("blur").style="filter: blur(3px)";
       document.getElementById("blur2").style="filter: blur(3px)";
   }
-
+  //method to move the what to take window out of display
   closeTake = (e) =>{
       document.getElementById("theTake").style.left="-100%"
       document.getElementById("blur").style="filter: blur(0px)";
       document.getElementById("blur2").style="filter: blur(0px)";
   }
-
+  //method to move the travel window out of display
   closeTravel = (e) =>{
       document.getElementById("theTravel").style.left="-100%"
       document.getElementById("blur").style="filter: blur(0px)";

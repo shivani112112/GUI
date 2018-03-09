@@ -3,9 +3,11 @@ import React, {Component } from 'react';
 class Conditions extends Component {
 
   render() {
+	  //if statements to assign the name of the image we want to use to a variable, based on the current weather conditions.
 	  var p ="sunface";
 	  var temp = this.props.condition;
 	  if(temp==="Clear"  || temp==="Very Hot" || temp==="Mostly Sunny" || temp==="Sunny") {
+		  	//decide whether to use sun or moon based on sunset times.
 		  	var d= new Date();
 		  	var n= d.getHours();
 		  	if(n>this.props.sunset||n<this.props.sunrise) p="moon2";
@@ -23,6 +25,7 @@ class Conditions extends Component {
 	  else if(temp==="Chance of Thunderstorms" || temp==="Chance of a Thunderstorm" || temp==="Thunderstorm" || temp==="Thunderstorms" || temp==="Unknown") p = "thunder";
 	  else if(temp==="Fog"|| temp==="Haze") p="fog";
 
+	  //dislpay conditions
     return (
       <div className="conditions">
         <div className="conditions_l">

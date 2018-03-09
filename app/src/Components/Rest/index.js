@@ -9,14 +9,16 @@ class Rest extends Component {
 		if(this.props.hours==undefined){
 
 		}else{
+			//store hours with td tags in an array to make it easier to mount.
 			console.log(this.props.icons);
 			for(var i=0; i<this.props.hours.length ;i++){
 			hourcells.push(<td>{this.props.hours[i]}</td>);
 			var temp = this.props.icons[i]
 			var p = 'sunface';
 
-
+			//if statements to assign the name of the image we want to use to a variable, based on the current weather conditions.			   
 			if(temp==="Clear"  || temp==="Very Hot" || temp==="Mostly Sunny" || temp==="Sunny") {
+				//decide whether to use sun or moon based on sunset times.
 				var d= new Date();
 				var n= d.getHours();
 				if(n>this.props.sunset||n<this.props.sunrise) p="moon2";
@@ -34,7 +36,7 @@ class Rest extends Component {
 
 
 
-
+			//store icons with td tags in an array to make it easier to mount.
 			iconcells.push(<td><img src={require('../../Images/'+p+'.png')} width="40px" height="40px" /></td>);
 		}
 		}
