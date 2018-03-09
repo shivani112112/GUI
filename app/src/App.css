@@ -41,6 +41,7 @@
 	height:35%;
 	font-family: "Mukta Mahee";
 	font-size: 20px;
+	margin-bottom: 10px; 
 }
 
 .conditions_l{ /* The CSS class for conditions_l applies to the left section of the conditions, so the emoji and the condition description. This class ensures they are floated to the left and fit a to a specific height. It also adds center allignment to the text. */
