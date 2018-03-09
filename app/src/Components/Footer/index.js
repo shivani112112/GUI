@@ -42,6 +42,7 @@ class Footer extends Component {
 	         }
 
     }
+	 //if(!severe && !changed) this.setState({trav:"sunglasses"});
    this.setState({travel:names, service: services, id:ids});
 
   }
@@ -80,6 +81,8 @@ class Footer extends Component {
         takesmall.push(<img src={require('../../Images/sunglasses.png')} height="40px" width="40px"/>);
       }
 
+      //  <button onClick={this.closeTravel.bind(this)}>
+      //  </button>
       return (
         <div className="footer">
             <div id="blur">
