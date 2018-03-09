@@ -5,8 +5,7 @@ class Rest extends Component {
 	render() {
 		var hourcells=[];
 		var iconcells=[];
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		//b,c,e,F
 		if(this.props.hours==undefined){
 			
@@ -65,10 +64,7 @@ class Rest extends Component {
 							iconcells.push(<td><img src={require('../../Images/'+p+'.png')} alt={p} width="40px" height="40px" /></td>);
 					}
 			}
-<<<<<<< HEAD
->>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
-=======
->>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
+
 		return (
 			<div className="rest">
 				<table>

@@ -8,18 +8,13 @@ class Conditions extends Component {
 	  if(temp==="Clear"  || temp==="Very Hot" || temp==="Mostly Sunny" || temp==="Sunny") {
 		  	var d= new Date();
 		  	var n= d.getHours();
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		  	if(n>this.props.sunset||n<this.props.sunrise) p="moon2";
 			else p ="sunface";
-=======
 		  	if(n>this.props.sunset||n<this.props.sunrise) p="newmoon";
 			  else p ="sunface";
->>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
-=======
 		  	if(n>this.props.sunset||n<this.props.sunrise) p="newmoon";
 			  else p ="sunface";
->>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
 	  }
 	  else if(temp=== "Partly Cloudy" || temp ==="Mostly Cloudy"|| temp==="Scattered Clouds" || temp==="Partly Sunny") p="partcloudy";
 	  else if(temp==="Cloudy" || temp==="Overcast") p = "cloudy";

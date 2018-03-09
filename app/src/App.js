@@ -256,10 +256,6 @@ class App extends Component {
 				         cofr={this.state.rain}
              />
           </div>
-<<<<<<< HEAD
->>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
-=======
->>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
 
 		);
 	}
