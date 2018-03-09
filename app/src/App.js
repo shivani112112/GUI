@@ -3,9 +3,8 @@ import './App.css';
 import Conditions from './Components/Conditions';
 import Compare from './Components/Compare';
 import Rest from './Components/Rest';
-import Footer from './Components/Footer'
+import Footer from './Components/Footer';
 
-var apikey = "eb6c4f1b08b3f272";
 var latlon = undefined;
 var loc="/UK/london";
 
@@ -58,7 +57,7 @@ class App extends Component {
 	getWeather = async () =>{
 		var apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/conditions/q/'+loc+'.json');
 		const conds = await apicall.json();
-    
+
 		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/yesterday/q/'+loc+'.json');
 		const yest = await apicall.json();
 
