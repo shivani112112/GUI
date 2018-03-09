@@ -152,7 +152,7 @@ class App extends Component {
 	}
 
 	render(){
-
+		//mount the components in order that they will be displayed on the page
       return(
 		      <div id="App">
 			       <div className="header">
