@@ -9,8 +9,13 @@ class Conditions extends Component {
 		  	var d= new Date();
 		  	var n= d.getHours();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		  	if(n>this.props.sunset||n<this.props.sunrise) p="moon2";
 			else p ="sunface";
+=======
+		  	if(n>this.props.sunset||n<this.props.sunrise) p="newmoon";
+			  else p ="sunface";
+>>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
 =======
 		  	if(n>this.props.sunset||n<this.props.sunrise) p="newmoon";
 			  else p ="sunface";

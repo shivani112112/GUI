@@ -130,6 +130,7 @@ class App extends Component {
 
 	render(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 		this.getWeather
@@ -194,6 +195,8 @@ class App extends Component {
 				cofr={this.state.rain}/>
 		</div>
 =======
+=======
+>>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
     this.getWeather
       return(
 		      <div id="App">
@@ -253,6 +256,9 @@ class App extends Component {
 				         cofr={this.state.rain}
              />
           </div>
+<<<<<<< HEAD
+>>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
+=======
 >>>>>>> 08b74b1b4db1312c5a712806bb7de2931c11d917
 
 		);
