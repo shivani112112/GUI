@@ -19,8 +19,7 @@ This allows us to set a font size and add a margin and padding in order to creat
 	padding:10px;
 }
 
-.header_share{
-    /* */
+.header_share{/*This applies to the share button within the header. It positions the icon in the correct place. */
 	position: absolute;
 	 top: 12px;
 	 right: 16px;
