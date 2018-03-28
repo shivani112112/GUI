@@ -26,13 +26,13 @@ class App extends Component {
 		sunrise: undefined,
 		sunset: undefined
 	}
-	
+
 	//componentWillMount runs before the page is rendered, before the componened it mounted onto the page
 	//this method makes a call to get the current location of the user and executes the success function if successful
 	componentWillMount = () => {
 		navigator.geolocation.getCurrentPosition(this.success, this.error);
 	}
-	
+
 	//success method for when getting the users current location. The method gets the users latitude and longitude coordinates and stores them in a variable which will be concatenated with the api url, also stores them in the location variable which will be used to call the api
 	success =  (pos) =>{
 		var lat =  pos.coords.latitude;
@@ -42,23 +42,23 @@ class App extends Component {
 		//call to the method to make the api call and get current weather details
 		this.getWeather();
 	}
-	
+
 	//method that will run when getting the users current location is unsuccessful, gets the weather for the last searched for location instead
 	error = () => {
 		//call to the method to make the api call and get current weather details
 		this.getWeather();
 	}
-	
+
 	//method to bring the search boxes down when the user clicks the search button
 	searchdown=(e)=> {
 		document.getElementById("header_dropdown").style.height="6%";
 		document.getElementById("header_dropdown").style.top="0%";
-    	document.getElementById("blur3").style= "filter: blur(3px)";
+    document.getElementById("blur3").style= "filter: blur(3px)";
   	}
-	
+
 	//method to run when the user searches for a specific place, stores the country and city in a variable and this will be concatenated onto the url, and then calls the method to make the api calls.
 	callSearch =(e) => {
-		
+
 		if(e) e.preventDefault(); //stop the page refreshing when the user submits search
 		var city = e.target.elements.city.value;
 		var country = e.target.elements.country.value;
@@ -71,32 +71,32 @@ class App extends Component {
 		document.getElementById("header_dropdown").style.top="-40%";
 		document.getElementById("blur3").style= "filter: blur(0px)";
 	}
-	
+
 	//method to allow the user to share the weather by redirecting them to twiiter with the current temp
 	share = (e)=>{
 		console.log("Shared");
 		var text= "It is " + this.state.temperature + " degrees right now";
 		window.location.assign("https://twitter.com/intent/tweet?url=&text="+text);
   	}
-	
+
 	//meathod to call the api to get the weather
 	getWeather = async () =>{
 		//calls the api (for each bit of information needed) and parses the file as a json which is then stored in a variable.
-		var apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/conditions/q/'+loc+'.json');
+		var apicall = await fetch('http://api.wunderground.com/api/61fa425d356c6fd4/conditions/q/'+loc+'.json');
 		const conds = await apicall.json();
 
-		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/yesterday/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/61fa425d356c6fd4/yesterday/q/'+loc+'.json');
 		const yest = await apicall.json();
 
-		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/forecast10day/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/61fa425d356c6fd4/forecast10day/q/'+loc+'.json');
 		const tenday = await apicall.json();
 
-		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/planner_07010731/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/61fa425d356c6fd4/planner_07010731/q/'+loc+'.json');
 		const planner = await apicall.json();
 
-		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/hourly/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/61fa425d356c6fd4/hourly/q/'+loc+'.json');
 		const hourly = await apicall.json();
-		
+
 		//store hourly information from json in arrays, format the time to say the hour and AM/PM
 		var hour=[];
 		var icon=[];
@@ -108,10 +108,10 @@ class App extends Component {
 				icon[i]=hourly.hourly_forecast[i].condition;
 			}
 
-		apicall = await fetch('http://api.wunderground.com/api/eb6c4f1b08b3f272/astronomy/q/'+loc+'.json');
+		apicall = await fetch('http://api.wunderground.com/api/61fa425d356c6fd4/astronomy/q/'+loc+'.json');
 		const astronomy = await apicall.json();
-		
-		
+
+
 		//use sunrise and sunset times to set the background
 		var sunr= astronomy.sun_phase.sunrise.hour;
 		var suns= astronomy.sun_phase.sunset.hour;
@@ -119,7 +119,7 @@ class App extends Component {
 		var n = new Date().getHours();
 		let url= require("./Images/night.jpg")
     	let url2= require("./Images/day.jpg")
-		
+
 		//set backgorund based on current time compared with sunset and sunrise times
 		if(n>suns || n<sunr){
 			document.getElementById("App").style.background='url(' + url + ')';
@@ -131,7 +131,7 @@ class App extends Component {
       		document.getElementById("App").style.backgroundRepeat= "no-repeat";
     		document.getElementById("App").style.backgroundSize="cover";
 		}
-		
+
 		//set all the states based on the jsons returned from the api calls
 		this.setState({
 			location: conds.current_observation.display_location.city,
