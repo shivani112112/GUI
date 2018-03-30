@@ -1,7 +1,7 @@
 #App{
 /* The ID for App applies to the whole page, this allows to add a background image.
 It is an ID because one of our requirements was to have the functionality of a changing background according to sunset times. */
-
+	background: url(./Images/night.jpg);
 	background-repeat: no-repeat;
 	background-size:cover;
 	height:100vh;
@@ -136,14 +136,14 @@ This class ensures that a margin is kept at the top of the feels like, in order 
 }
 
 .footer{ /* This CSS class for footer applies to the what to take and travel elements. It allows us to set a width and align the text for the section. */
-    
+
 	width: 100%;
 	display: inline-block;
 	text-align: center;
 }
 
 #header_dropdown{ /* This CSS ID for header_dropdown. It allows us to style the dropdown box that appears once the search bbutton is clicked. */
-    
+
 	width:74%;
 	height:0%;
 	left:40px;
@@ -175,22 +175,22 @@ This class ensures that a margin is kept at the top of the feels like, in order 
 }
 
 #bakerloo{ /* This CSS ID the bakerloo line, it allows us to add a background colour to the service update. */
-    
+
     background-color: #996633;
 }
 
 #central{ /* This CSS ID the central line, it allows us to add a background colour to the service update. */
-    
+
 	background-color:red;
 }
 
 #circle{ /* This CSS ID the circle line, it allows us to add a background colour to the service update. */
-    
+
     background-color: #ffcc00;
 }
 
 #district{ /* This CSS ID the district line, it allows us to add a background colour to the service update. */
-    
+
     background-color: #006633;
 }
 
@@ -224,7 +224,7 @@ This class ensures that a margin is kept at the top of the feels like, in order 
 
 
 .scroll{ /* This CSS class applies to the scroll in the travel section. It allows the user to scroll through the different tube lines and ensures that any extra information added is added to the scroll. */
-    
+
 	height: 80%;
 	max-height: 27vh;
 	overflow-y: auto;
@@ -249,12 +249,12 @@ This class ensures that a margin is kept at the top of the feels like, in order 
 }
 
 .footer_take:hover{ /* This CSS class applies to the take section when hovering over the box. It dims the background once a user hovers. */
-    
+
 	background-color:rgba(0,0,0,0.5);
 }
 
 .footer_travel{ /* This CSS class applies to the travel section that you can see on the screen before it is clicked. It ensures the box is floated to the right and has the correct styling. */
-    
+
 	padding-top: 5px;
 	width: 48%;
 	background-color:rgba(0,0,0,0.2);
@@ -263,24 +263,24 @@ This class ensures that a margin is kept at the top of the feels like, in order 
 }
 
 .footer_travel:hover{ /* This CSS class applies to the travel section when hovering over the box. It dims the background once a user hovers. */
-    
+
 	background-color:rgba(0,0,0,0.5);
 }
 
 input { /*This CSS applies to the inputs of the system. */
-    
+
 	margin-right: 10px;
 	width: 80%;
 
 }
 
 button{ /*This CSS applies to the buttons of the system. */
-    
+
 	all: unset;
 }
 
 form{ /*This CSS applies to the forms of the system. */
-    
+
 	display: inline-flex;
 }
 
