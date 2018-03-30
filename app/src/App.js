@@ -158,8 +158,6 @@ class App extends Component {
 			       <div className="header">
 				         <div id="header_dropdown">
 					            <form onSubmit={this.callSearch}>
-					                 <input  name="country" id="country" placeholder="UK" />
-						               <input  name="city" id="city" placeholder="London" />
 					                 <input id="go" type="submit" value="Go" />
 					            </form>
 				         </div>
