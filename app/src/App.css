@@ -1,7 +1,7 @@
 #App{
 /* The ID for App applies to the whole page, this allows to add a background image.
 It is an ID because one of our requirements was to have the functionality of a changing background according to sunset times. */
-	background: url(./Images/night.jpg);
+	background: url(./Images/day.jpg);
 	background-repeat: no-repeat;
 	background-size:cover;
 	height:100vh;
